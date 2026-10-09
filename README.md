@@ -1,2 +1,2 @@
-# MsHacktoberfest-26
+# MsHacktoberfest
 Projects for Hacktoberfest Live here
