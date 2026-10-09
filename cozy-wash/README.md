@@ -24,16 +24,16 @@ Live at **[cozywash.app](https://cozywash.app)**. Built in the open for Hacktobe
 You get one new basket a day. The same date always gives the same basket.
 
 1. **Cover.** Press Enter to go in.
-2. **Sort.** Sixteen tiles are face down. Flip a tile to see the piece, then put it in a bin: whites, lights, darks, colors or delicates. Arrow keys work too. Check the pockets, and watch for a lone sock.
+2. **Sort.** Sixteen tiles are face down. Flip a tile to see the piece, then put it in a bin: Whites, Darks, Colors, Delicates, or Don't wash for anything that shouldn't go in the machine. Check the pockets, and watch for a lone sock.
 3. **Load.** Each bin is a load. Pick the cycle and the water, add detergent, softener or bleach, then pay with a coin or a tap.
-4. **Wash.** Watch the cycle run: fill, tumble, drain, spin. A bad load can be rewashed, up to three times.
+4. **Wash.** Watch the cycle run: fill, tumble, drain, spin. If a load comes out pink, stained or grubby, you can rewash it, up to three times.
 5. **Dry.** Move each piece to the dryer or the drying rack. Anything marked Hang dry goes on the rack. Add one dryer sheet, or live with a little static.
 6. **Fold.** Follow the guide line and fold each piece into a neat square or rectangle, then drop it in the basket.
 7. **Receipt.** A receipt prints with everything you did, a title like Cat Rescuer or Sock Whisperer, and a short note from the attendant.
 
 Every finished day unlocks one more color or pattern for your closet, until you have them all.
 
-**Keyboard.** The whole game plays with a keyboard. Tab moves between buttons, Enter or Space presses them, and the arrow keys move pieces between bins. There are captions for every sound, a reduced-motion setting, and light and dark themes that follow your device.
+**Keyboard.** The whole game plays with a keyboard. Tab moves between buttons, and Enter or Space presses them. On the sort screen the arrow keys move between the tiles, Enter flips one, and the number keys 1 to 5 put the piece in a bin (1 Whites, 2 Darks, 3 Colors, 4 Delicates, 5 Don't wash). There are captions for every sound, a reduced-motion setting, and light and dark themes that follow your device.
 
 ## Run it on your computer
 
