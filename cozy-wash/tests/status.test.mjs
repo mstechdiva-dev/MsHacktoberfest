@@ -116,7 +116,7 @@ test('the receipt prints the way the plan shows it', () => {
   const r = printed();
   const lines = r.text.split('\n');
   assert.equal(lines[0], 'COZY WASH');
-  assert.equal(lines[1], 'cozywash.app');
+  assert.equal(lines[1], 'example.com');
   assert.equal(lines[2], 'Thu Oct 08 2026  4:12 PM');
   assert.ok(lines.includes('LOADS' + ' '.repeat(26) + '4'), 'LOADS 4, 32 wide like the plan');
   assert.match(r.text, /^  Whites \.+ 60 \/ 100$/m, 'dotted leader on each load');

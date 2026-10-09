@@ -3,7 +3,7 @@
 A cozy browser laundry game you play once a day. Flip tiles to find the laundry, sort it, dose the washer, pay with a coin or a tap, wash, move the clothes to the dryer, and fold each piece into the basket. When the basket is full, a receipt prints, and you're done until tomorrow. It's full of traps: a red sock in the whites, a phone in a pocket, a cat in the pile. Built in the open for Hacktoberfest 2026.
 
 - Name: **Cozy Wash** (formerly ASMR Wash)
-- Domain: **cozywash.app** (purchased)
+- Domain: **example.com** (purchased)
 - Repo: public. The sounds in this copy are all generated in code as placeholders. They can be replaced with licensed commercial sounds.
 - Hosting: **Vercel** (static site plus two serverless functions)
 - Model harness: **OpenRouter**, free open-weight models only
@@ -571,7 +571,7 @@ Both ways are on every machine. Both start the same wash, and both are free.
   "temperature": 0.9
 }
 ```
-Headers: `Authorization: Bearer $OPENROUTER_API_KEY`, `HTTP-Referer: https://cozywash.app`, `X-Title: Cozy Wash`.
+Headers: `Authorization: Bearer $OPENROUTER_API_KEY`, `HTTP-Referer: https://example.com`, `X-Title: Cozy Wash`.
 
 **System prompt** (`api/_lib/prompt.js`):
 > You are the friendly attendant at Cozy Wash, a cozy laundromat game. Write ONE short, simple sentence for the player's receipt about their laundry today. Use everyday words, no puns stacked together, no long jokes. Mention one thing that really happened, from the facts. Never invent anything. No brand names, no real people, nothing scary. Max 80 characters. Leave `lines` empty.
@@ -706,7 +706,7 @@ When the last load lands in the basket, a receipt prints out of a slot (`receipt
 
 ```
         COZY WASH
-       cozywash.app
+       example.com
    Thu Oct 08 2026  4:12 PM
 --------------------------------
 LOADS                         4
@@ -757,7 +757,7 @@ There are no logins and no database, so nothing can fully stop a repeat. A priva
 
 **Two clocks, on purpose:** the game day follows the player's local midnight, and live notes follow OpenRouter's midnight UTC. A player whose local day starts before midnight UTC may get a house note instead of a live one for that day. That's accepted.
 
-**Testing:** `?newday=1` clears `playedOn`. It only works on `localhost` or a hostname ending in `.vercel.app` (preview deployments), never on cozywash.app.
+**Testing:** `?newday=1` clears `playedOn`. It only works on `localhost` or a hostname ending in `.vercel.app` (preview deployments), never on example.com.
 
 **Acceptance check:** a full basket prints the receipt with every stat and a note. Exit goes to See you tomorrow. A second game the same day is blocked in the same browser. The cookie stops a second live note. Refreshing mid-game resumes at the same step.
 
@@ -1018,14 +1018,14 @@ The whole game uses the cover's look (`docs/cover.html`): a soft blue laundromat
 | M8 | **Receipt and once a day** | Section 13's acceptance check passes |
 | M9 | **Closed and signs** | Section 12's acceptance check passes. The closed screen loop, Check again, auto-check and sleep timer all work |
 | M10 | **Sound pack** | All 42 core sounds have files (Kenney or Freesound CC0, or your own) or synth fallbacks. Loops have no audible click. `CREDITS.md` is complete |
-| M11 | **Launch** | Deployed on Vercel, cozywash.app connected, OpenRouter key set up, docs written, issue templates and labels in place, `hacktoberfest` topic added, 10 or more `good first issue`s open |
+| M11 | **Launch** | Deployed on Vercel, example.com connected, OpenRouter key set up, docs written, issue templates and labels in place, `hacktoberfest` topic added, 10 or more `good first issue`s open |
 
 ### Deploy steps (M11)
 1. Create the OpenRouter key and set its daily credit limit to $0. When players start hitting 50 a day, buy $10 of credits once to raise the allowance to 1,000.
 2. Check that both model names in `config/model.json` are still listed on openrouter.ai.
 3. Import the GitHub repo into Vercel. No build command; the output is the repo root.
 4. Add `OPENROUTER_API_KEY` and `COZY_COOKIE_SECRET` (a long random string) to Production only. Previews run without them and use house notes, which is safe for pull requests from forks.
-5. Add `cozywash.app` in Vercel and set the DNS records at Porkbun as Vercel shows them.
+5. Add `example.com` in Vercel and set the DNS records at Porkbun as Vercel shows them.
 6. Check that `/api/status` says open and that finishing a game gives a receipt with `"source":"model"`.
 
 ### GitHub setup
@@ -1038,7 +1038,7 @@ The whole game uses the cover's look (`docs/cover.html`): a soft blue laundromat
 ## 21. Decisions
 
 **Decided by the owner**
-- Name Cozy Wash, domain cozywash.app, public repo, Hacktoberfest
+- Name Cozy Wash, domain example.com, public repo, Hacktoberfest
 - No database, no logins; OpenRouter with free open-weight models, no frontier models; $0 a day, $10 once when needed
 - Once a day: a full basket ends the game; a receipt shows everything done and says "Have a nice day! Thank you for visiting Cozy Wash." with an Exit button
 - One live note per player per day; replays limited by a browser save plus a signed cookie (a private window can still replay; accepted)

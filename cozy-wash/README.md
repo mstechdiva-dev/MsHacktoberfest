@@ -4,7 +4,16 @@ A cozy laundry game you play once a day. Flip the tiles to find the laundry, sor
 
 Watch out for the red sock in the whites, the phone in a pocket and the cat napping in the pile.
 
-Live at **[cozywash.app](https://cozywash.app)**. Built in the open for Hacktoberfest 2026.
+Live at **[example.com](https://example.com)**. Built in the open for Hacktoberfest 2026.
+
+> **Placeholder domain:** `example.com` is a stand-in for the real site address. Before you deploy, update it everywhere it appears:
+>
+> - `src/engine/receipt.js`: the address printed on the receipt
+> - `tests/status.test.mjs`: the test that checks that receipt line (change it with `receipt.js`)
+> - `api/_lib/openrouter.js`: the `HTTP-Referer` header sent to OpenRouter
+> - `README.md` and `PLAN.md`: the site links and the launch and DNS steps
+>
+> To find every spot, search the project for `example.com`.
 
 ## Contents
 
