@@ -4,7 +4,7 @@ A cozy laundry game you play once a day. Flip the tiles to find the laundry, sor
 
 Watch out for the red sock in the whites, the phone in a pocket and the cat napping in the pile.
 
-Live at **[cozywash.app](https://cozywash.app)**. Built in the open for Hacktoberfest 2026.
+Live at **[example.com](https://example.com)**. Built in the open for Hacktoberfest 2026.
 
 ## Contents
 
