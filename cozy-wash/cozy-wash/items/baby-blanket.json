@@ -1,0 +1,31 @@
+{
+  "id": "baby-blanket",
+  "name": "Baby blanket",
+  "kind": "bonus",
+  "bin": "delicate",
+  "fabric": "fleece",
+  "color": "#f6dbe0",
+  "pattern": "solid",
+  "art": "towel",
+  "tags": [
+    "Gentle cycle",
+    "No bleach"
+  ],
+  "care": {
+    "gentle": true,
+    "maxTemp": "cold",
+    "bleach": false,
+    "dryer": true,
+    "shrinks": false
+  },
+  "fold": "towel",
+  "pair": false,
+  "pocket": null,
+  "rarity": "uncommon",
+  "season": null,
+  "unlock": null,
+  "onWrong": {
+    "damage": "none",
+    "fact": null
+  }
+}

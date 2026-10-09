@@ -1,0 +1,31 @@
+{
+  "id": "sleepy-cat",
+  "name": "Sleepy cat",
+  "kind": "trap",
+  "bin": "nowash",
+  "fabric": "fur",
+  "color": "#f6bb83",
+  "pattern": "solid",
+  "art": "cat",
+  "tags": [
+    "Very sleepy",
+    "Do not wash"
+  ],
+  "care": {
+    "gentle": true,
+    "maxTemp": "cold",
+    "bleach": false,
+    "dryer": false,
+    "shrinks": false
+  },
+  "fold": null,
+  "pair": false,
+  "pocket": null,
+  "rarity": "common",
+  "season": null,
+  "unlock": null,
+  "onWrong": {
+    "damage": "none",
+    "fact": "cat_woke"
+  }
+}

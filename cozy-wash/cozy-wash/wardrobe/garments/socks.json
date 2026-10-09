@@ -1,0 +1,18 @@
+{
+  "id": "socks",
+  "name": "sock",
+  "art": "sock",
+  "fold": "socks",
+  "fabrics": [
+    "cotton",
+    "wool"
+  ],
+  "patterns": [
+    "solid",
+    "stripes",
+    "dots"
+  ],
+  "pair": true,
+  "sturdyLooking": false,
+  "pocket": null
+}

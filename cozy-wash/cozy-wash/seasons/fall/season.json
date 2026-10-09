@@ -1,0 +1,32 @@
+{
+  "id": "fall",
+  "name": "Fall",
+  "accent": "#d9822b",
+  "itemIds": [
+    "witch-hat",
+    "pumpkin-sweater",
+    "costume-cape"
+  ],
+  "colors": [
+    {
+      "id": "pumpkin",
+      "name": "Pumpkin",
+      "hex": "#e8772e",
+      "bin": "color",
+      "bleed": 0.25
+    }
+  ],
+  "patterns": [
+    {
+      "id": "leaves",
+      "name": "leafy",
+      "svg": "leaves"
+    }
+  ],
+  "houseNotes": {
+    "bleed": [
+      "Something orange got a little too festive.",
+      "Spooky season reached the whites."
+    ]
+  }
+}

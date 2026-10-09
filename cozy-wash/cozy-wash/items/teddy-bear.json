@@ -1,0 +1,32 @@
+{
+  "id": "teddy-bear",
+  "name": "Teddy bear",
+  "kind": "bonus",
+  "bin": "delicate",
+  "fabric": "fleece",
+  "color": "#c9996f",
+  "pattern": "solid",
+  "art": "teddy",
+  "tags": [
+    "Gentle cycle",
+    "Cold water only"
+  ],
+  "care": {
+    "gentle": true,
+    "maxTemp": "cold",
+    "bleach": false,
+    "dryer": true,
+    "shrinks": false
+  },
+  "fold": "smooth",
+  "pair": false,
+  "pocket": null,
+  "rarity": "uncommon",
+  "season": null,
+  "unlock": null,
+  "onWrong": {
+    "damage": "none",
+    "fact": null
+  },
+  "shelf": true
+}

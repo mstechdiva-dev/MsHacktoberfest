@@ -1,0 +1,14 @@
+name: Fold
+description: A new fold, or a fix to one that looks wrong.
+labels: [fold]
+body:
+  - type: input
+    id: fold
+    attributes:
+      label: Fold id or garment
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What should the 4 taps do?

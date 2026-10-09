@@ -1,0 +1,18 @@
+{
+  "id": "top",
+  "name": "top",
+  "art": "tank",
+  "fold": "shirt",
+  "fabrics": [
+    "lace",
+    "silk",
+    "cotton"
+  ],
+  "patterns": [
+    "solid",
+    "dots"
+  ],
+  "pair": false,
+  "sturdyLooking": false,
+  "pocket": null
+}

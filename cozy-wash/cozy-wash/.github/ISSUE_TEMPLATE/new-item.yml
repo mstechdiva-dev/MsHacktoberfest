@@ -1,0 +1,26 @@
+name: New item
+description: Suggest or claim a new trap, bonus piece or look-alike.
+labels: [item, good first issue]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Item name
+      placeholder: Rain boots
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options: [trap, bonus, look-alike, pocket]
+  - type: textarea
+    id: idea
+    attributes:
+      label: Which bin, and what happens if it's washed?
+  - type: checkboxes
+    id: claim
+    attributes:
+      label: Claim
+      options:
+        - label: I'd like to build this one.

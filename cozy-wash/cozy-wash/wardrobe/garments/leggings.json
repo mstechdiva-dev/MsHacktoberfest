@@ -1,0 +1,18 @@
+{
+  "id": "leggings",
+  "name": "leggings",
+  "art": "leggings",
+  "fold": "pants",
+  "fabrics": [
+    "jersey",
+    "cotton"
+  ],
+  "patterns": [
+    "solid",
+    "stars",
+    "dots"
+  ],
+  "pair": false,
+  "sturdyLooking": false,
+  "pocket": null
+}

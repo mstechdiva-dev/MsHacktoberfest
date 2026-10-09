@@ -1,0 +1,30 @@
+{
+  "id": "coin",
+  "name": "Coin",
+  "kind": "pocket",
+  "bin": "nowash",
+  "fabric": "metal",
+  "color": "#c9ced3",
+  "pattern": "solid",
+  "art": "coin",
+  "tags": [
+    "Check pockets"
+  ],
+  "care": {
+    "gentle": false,
+    "maxTemp": "cold",
+    "bleach": false,
+    "dryer": false,
+    "shrinks": false
+  },
+  "fold": null,
+  "pair": false,
+  "pocket": null,
+  "rarity": "common",
+  "season": null,
+  "unlock": null,
+  "onWrong": {
+    "damage": "none",
+    "fact": "keys_clank"
+  }
+}

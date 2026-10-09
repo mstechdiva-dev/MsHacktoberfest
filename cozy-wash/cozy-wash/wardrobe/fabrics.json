@@ -1,0 +1,91 @@
+[
+  {
+    "id": "cotton",
+    "name": "cotton",
+    "care": {
+      "gentle": false,
+      "maxTemp": "hot",
+      "bleach": true,
+      "dryer": true,
+      "shrinks": false
+    }
+  },
+  {
+    "id": "jersey",
+    "name": "jersey",
+    "care": {
+      "gentle": false,
+      "maxTemp": "warm",
+      "bleach": false,
+      "dryer": true,
+      "shrinks": false
+    }
+  },
+  {
+    "id": "denim",
+    "name": "denim",
+    "care": {
+      "gentle": false,
+      "maxTemp": "warm",
+      "bleach": false,
+      "dryer": true,
+      "shrinks": false
+    },
+    "bleedBonus": 0.1
+  },
+  {
+    "id": "fleece",
+    "name": "fleece",
+    "care": {
+      "gentle": false,
+      "maxTemp": "warm",
+      "bleach": false,
+      "dryer": true,
+      "shrinks": false
+    }
+  },
+  {
+    "id": "linen",
+    "name": "linen",
+    "care": {
+      "gentle": false,
+      "maxTemp": "warm",
+      "bleach": false,
+      "dryer": true,
+      "shrinks": false
+    }
+  },
+  {
+    "id": "wool",
+    "name": "wool",
+    "care": {
+      "gentle": true,
+      "maxTemp": "cold",
+      "bleach": false,
+      "dryer": false,
+      "shrinks": true
+    }
+  },
+  {
+    "id": "silk",
+    "name": "silk",
+    "care": {
+      "gentle": true,
+      "maxTemp": "cold",
+      "bleach": false,
+      "dryer": false,
+      "shrinks": false
+    }
+  },
+  {
+    "id": "lace",
+    "name": "lace",
+    "care": {
+      "gentle": true,
+      "maxTemp": "cold",
+      "bleach": false,
+      "dryer": false,
+      "shrinks": false
+    }
+  }
+]

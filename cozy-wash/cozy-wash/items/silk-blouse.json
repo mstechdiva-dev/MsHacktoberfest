@@ -1,0 +1,30 @@
+{
+  "id": "silk-blouse",
+  "name": "Silk blouse",
+  "kind": "trap",
+  "bin": "nowash",
+  "fabric": "silk",
+  "color": "#f7f0f4",
+  "pattern": "solid",
+  "art": "shirt",
+  "tags": [
+    "Dry clean only"
+  ],
+  "care": {
+    "gentle": true,
+    "maxTemp": "cold",
+    "bleach": false,
+    "dryer": false,
+    "shrinks": false
+  },
+  "fold": null,
+  "pair": false,
+  "pocket": null,
+  "rarity": "common",
+  "season": null,
+  "unlock": null,
+  "onWrong": {
+    "damage": "self",
+    "fact": "silk_ruined"
+  }
+}

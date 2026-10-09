@@ -1,0 +1,26 @@
+{
+  "id": "hoodie",
+  "name": "hoodie",
+  "art": "hoodie",
+  "fold": "shirt",
+  "fabrics": [
+    "cotton",
+    "fleece"
+  ],
+  "patterns": [
+    "solid",
+    "stripes"
+  ],
+  "sturdyLooking": true,
+  "pocket": {
+    "chance": 0.3,
+    "contents": [
+      "tissue",
+      "coin",
+      "pen",
+      "phone",
+      "crayon"
+    ]
+  },
+  "pair": false
+}

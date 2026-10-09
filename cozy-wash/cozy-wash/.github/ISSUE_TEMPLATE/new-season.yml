@@ -1,0 +1,21 @@
+name: Season
+description: Fill in winter, spring or summer, or improve fall.
+labels: [season]
+body:
+  - type: dropdown
+    id: season
+    attributes:
+      label: Season
+      options: [winter, spring, summer, fall]
+    validations:
+      required: true
+  - type: textarea
+    id: ideas
+    attributes:
+      label: Items, colors, patterns and house notes
+  - type: checkboxes
+    id: claim
+    attributes:
+      label: Claim
+      options:
+        - label: I'd like to build this one.

@@ -1,0 +1,30 @@
+{
+  "id": "white-socks",
+  "name": "White sock",
+  "kind": "everyday",
+  "bin": "white",
+  "fabric": "cotton",
+  "color": "#ffffff",
+  "pattern": "solid",
+  "art": "sock",
+  "tags": [
+    "Wash with whites"
+  ],
+  "care": {
+    "gentle": false,
+    "maxTemp": "hot",
+    "bleach": true,
+    "dryer": true,
+    "shrinks": false
+  },
+  "fold": "socks",
+  "pair": true,
+  "pocket": null,
+  "rarity": "common",
+  "season": null,
+  "unlock": null,
+  "onWrong": {
+    "damage": "none",
+    "fact": null
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "sneakers",
+  "name": "Sneakers",
+  "kind": "bonus",
+  "bin": "color",
+  "fabric": "cotton",
+  "color": "#f2f2f2",
+  "pattern": "solid",
+  "art": "sneaker",
+  "tags": [
+    "Wash with colors",
+    "Hang dry"
+  ],
+  "care": {
+    "gentle": false,
+    "maxTemp": "cold",
+    "bleach": false,
+    "dryer": false,
+    "shrinks": false
+  },
+  "fold": null,
+  "pair": false,
+  "pocket": null,
+  "rarity": "uncommon",
+  "season": null,
+  "unlock": null,
+  "onWrong": {
+    "damage": "none",
+    "fact": null
+  },
+  "thump": true
+}

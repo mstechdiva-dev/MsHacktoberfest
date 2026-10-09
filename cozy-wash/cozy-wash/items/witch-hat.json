@@ -1,0 +1,32 @@
+{
+  "id": "witch-hat",
+  "name": "Witch hat",
+  "kind": "bonus",
+  "bin": "color",
+  "fabric": "cotton",
+  "color": "#2b2238",
+  "pattern": "solid",
+  "art": "hat",
+  "tags": [
+    "Bleeds",
+    "Wash with colors"
+  ],
+  "care": {
+    "gentle": false,
+    "maxTemp": "cold",
+    "bleach": false,
+    "dryer": false,
+    "shrinks": false
+  },
+  "fold": "shirt",
+  "pair": false,
+  "pocket": null,
+  "rarity": "uncommon",
+  "season": "fall",
+  "unlock": null,
+  "onWrong": {
+    "damage": "none",
+    "fact": null
+  },
+  "bleeder": 0.25
+}

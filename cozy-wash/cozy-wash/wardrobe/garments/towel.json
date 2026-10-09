@@ -1,0 +1,16 @@
+{
+  "id": "towel",
+  "name": "towel",
+  "art": "towel",
+  "fold": "towel",
+  "fabrics": [
+    "cotton"
+  ],
+  "patterns": [
+    "solid",
+    "stripes"
+  ],
+  "pair": false,
+  "sturdyLooking": false,
+  "pocket": null
+}

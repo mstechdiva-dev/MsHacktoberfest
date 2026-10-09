@@ -1,0 +1,19 @@
+{
+  "id": "pillowcase",
+  "name": "pillowcase",
+  "art": "pillowcase",
+  "fold": "towel",
+  "fabrics": [
+    "cotton",
+    "silk",
+    "linen"
+  ],
+  "patterns": [
+    "solid",
+    "stripes",
+    "dots"
+  ],
+  "pair": false,
+  "sturdyLooking": false,
+  "pocket": null
+}

@@ -1,0 +1,9 @@
+{
+  "id": "tank",
+  "viewBox": [
+    32,
+    30
+  ],
+  "outline": "M9 2 L13 2 Q16 8 19 2 L23 2 L23 10 L25 28 L7 28 L9 10 Z",
+  "details": []
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "solid",
+    "name": "",
+    "svg": "solid"
+  },
+  {
+    "id": "stripes",
+    "name": "striped",
+    "svg": "stripes"
+  },
+  {
+    "id": "dots",
+    "name": "polka-dot",
+    "svg": "dots"
+  },
+  {
+    "id": "plaid",
+    "name": "plaid",
+    "svg": "plaid"
+  },
+  {
+    "id": "checks",
+    "name": "checked",
+    "svg": "checks"
+  },
+  {
+    "id": "stars",
+    "name": "starry",
+    "svg": "stars"
+  },
+  {
+    "id": "hearts",
+    "name": "heart",
+    "svg": "hearts"
+  }
+]

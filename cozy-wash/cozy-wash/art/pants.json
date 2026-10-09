@@ -1,0 +1,11 @@
+{
+  "id": "pants",
+  "viewBox": [
+    24,
+    40
+  ],
+  "outline": "M3 2 H21 L20 38 H14 L12 16 L10 38 H4 Z",
+  "details": [
+    "M3.2 7 H20.8"
+  ]
+}

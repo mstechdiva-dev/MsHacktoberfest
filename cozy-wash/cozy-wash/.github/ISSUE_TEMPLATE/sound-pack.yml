@@ -1,0 +1,16 @@
+name: Sounds
+description: Add or improve sounds (CC0 or your own only).
+labels: [sound]
+body:
+  - type: textarea
+    id: which
+    attributes:
+      label: Which sound ids?
+      description: The ids are in sounds/default/manifest.json.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source and license
+      placeholder: Kenney, CC0

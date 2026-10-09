@@ -1,0 +1,30 @@
+{
+  "id": "pen",
+  "name": "Pen",
+  "kind": "trap",
+  "bin": "nowash",
+  "fabric": "none",
+  "color": "#3d78c4",
+  "pattern": "solid",
+  "art": "pen",
+  "tags": [
+    "Do not wash"
+  ],
+  "care": {
+    "gentle": false,
+    "maxTemp": "cold",
+    "bleach": false,
+    "dryer": false,
+    "shrinks": false
+  },
+  "fold": null,
+  "pair": false,
+  "pocket": null,
+  "rarity": "common",
+  "season": null,
+  "unlock": null,
+  "onWrong": {
+    "damage": "stain",
+    "fact": "pen_ink"
+  }
+}

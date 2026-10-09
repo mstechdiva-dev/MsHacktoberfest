@@ -1,0 +1,19 @@
+{
+  "id": "onesie",
+  "name": "onesie",
+  "art": "onesie",
+  "fold": "shirt",
+  "fabrics": [
+    "cotton",
+    "fleece"
+  ],
+  "patterns": [
+    "solid",
+    "stars",
+    "hearts",
+    "dots"
+  ],
+  "pair": false,
+  "sturdyLooking": false,
+  "pocket": null
+}

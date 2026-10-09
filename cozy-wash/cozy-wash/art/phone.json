@@ -1,0 +1,11 @@
+{
+  "id": "phone",
+  "viewBox": [
+    20,
+    36
+  ],
+  "outline": "M3 1 H17 Q19 1 19 3 V33 Q19 35 17 35 H3 Q1 35 1 33 V3 Q1 1 3 1 Z",
+  "details": [
+    "M4 5 H16 V29 H4 Z"
+  ]
+}

@@ -1,0 +1,370 @@
+{
+  "pack": "default",
+  "note": "file: null means the built-in synthesized stand-in plays. Add an .mp3 to this folder and put its name here. Loops: loopStart skips the little gap an mp3 starts with, and loopEnd null means the end of the file. Set a number only to loop part of a recording.",
+  "sounds": {
+    "ui-click": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Click",
+      "core": true
+    },
+    "sign-flip": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Sign swings",
+      "core": true
+    },
+    "tile-flip": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Tile flips",
+      "core": true
+    },
+    "bin-drop": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Into the bin",
+      "core": true
+    },
+    "saved-it": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Saved it",
+      "core": true
+    },
+    "pocket-rustle": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Pocket rustle",
+      "core": true
+    },
+    "sock-match": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Socks matched",
+      "core": true
+    },
+    "unlock": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Unlocked",
+      "core": true
+    },
+    "door-open": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Door opens",
+      "core": true
+    },
+    "door-close": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Door closes",
+      "core": true
+    },
+    "drum-drop": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Into the drum",
+      "core": true
+    },
+    "pour-liquid": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Pour",
+      "core": true
+    },
+    "pour-powder": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Scoop",
+      "core": true
+    },
+    "dial-click": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Dial click",
+      "core": true
+    },
+    "coin-grab": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Coin jingle",
+      "core": true
+    },
+    "coin-drop": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Coin drops",
+      "core": true
+    },
+    "coin-clink-1": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Clink",
+      "core": true
+    },
+    "coin-clink-2": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Clink",
+      "core": true
+    },
+    "coin-clink-3": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Clink",
+      "core": true
+    },
+    "coin-start": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Machine starts",
+      "core": true
+    },
+    "phone-pickup": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Phone picked up",
+      "core": true
+    },
+    "tap-hover": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Reader hums",
+      "core": true
+    },
+    "tap-beep": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Paid",
+      "core": true
+    },
+    "tap-decline": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Try again",
+      "core": true
+    },
+    "wash-fill": {
+      "file": null,
+      "loop": true,
+      "volume": 0.8,
+      "caption": "Water filling",
+      "core": true,
+      "loopStart": 0.05,
+      "loopEnd": null
+    },
+    "wash-tumble": {
+      "file": null,
+      "loop": true,
+      "volume": 0.7,
+      "caption": "Drum tumbling",
+      "core": true,
+      "loopStart": 0.05,
+      "loopEnd": null
+    },
+    "wash-drain": {
+      "file": null,
+      "loop": true,
+      "volume": 0.8,
+      "caption": "Water draining",
+      "core": true,
+      "loopStart": 0.05,
+      "loopEnd": null
+    },
+    "wash-spin": {
+      "file": null,
+      "loop": true,
+      "volume": 0.8,
+      "caption": "Spin cycle",
+      "core": true,
+      "loopStart": 0.05,
+      "loopEnd": null
+    },
+    "wash-end": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Washer chime",
+      "core": true
+    },
+    "bubble-pop": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Bubble pop",
+      "core": true
+    },
+    "rack-hang": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Hung on the rack",
+      "core": true
+    },
+    "sheet-pull": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Dryer sheet",
+      "core": true
+    },
+    "dryer-start": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Dryer starts",
+      "core": true
+    },
+    "dryer-tumble": {
+      "file": null,
+      "loop": true,
+      "volume": 0.7,
+      "caption": "Dryer tumbling",
+      "core": true,
+      "loopStart": 0.05,
+      "loopEnd": null
+    },
+    "dryer-end": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Dryer buzzer",
+      "core": true
+    },
+    "static-zap": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Static zap",
+      "core": true
+    },
+    "fold-flap-1": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Fold",
+      "core": true
+    },
+    "fold-flap-2": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Fold",
+      "core": true
+    },
+    "basket-drop": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Into the basket",
+      "core": true
+    },
+    "result-good": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Nice!",
+      "core": true
+    },
+    "result-bad": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Oops",
+      "core": true
+    },
+    "receipt-print": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Receipt printing",
+      "core": true
+    },
+    "sock-roll": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Socks rolled",
+      "core": false
+    },
+    "fur-smooth": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Fur smoothed",
+      "core": false
+    },
+    "trap-clank": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Clanking in the drum",
+      "core": false
+    },
+    "sneaker-thump": {
+      "file": null,
+      "loop": true,
+      "volume": 0.7,
+      "caption": "Sneakers thumping",
+      "core": false,
+      "loopStart": 0.05,
+      "loopEnd": null
+    },
+    "suds-overflow": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Suds overflowing",
+      "core": false
+    },
+    "tissue-poof": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Tissue poof",
+      "core": false
+    },
+    "cat-meow": {
+      "file": null,
+      "loop": false,
+      "volume": 0.8,
+      "caption": "Grumpy meow",
+      "core": false
+    },
+    "room-tone": {
+      "file": null,
+      "loop": true,
+      "volume": 0.7,
+      "caption": "Laundromat hum",
+      "core": false,
+      "loopStart": 0.05,
+      "loopEnd": null
+    }
+  }
+}

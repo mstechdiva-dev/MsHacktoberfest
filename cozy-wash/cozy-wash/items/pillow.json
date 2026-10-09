@@ -1,0 +1,31 @@
+{
+  "id": "pillow",
+  "name": "Pillow",
+  "kind": "bonus",
+  "bin": "white",
+  "fabric": "cotton",
+  "color": "#ffffff",
+  "pattern": "solid",
+  "art": "pillow",
+  "tags": [
+    "Wash with whites",
+    "Hang dry"
+  ],
+  "care": {
+    "gentle": false,
+    "maxTemp": "warm",
+    "bleach": false,
+    "dryer": false,
+    "shrinks": false
+  },
+  "fold": "smooth",
+  "pair": false,
+  "pocket": null,
+  "rarity": "rare",
+  "season": null,
+  "unlock": null,
+  "onWrong": {
+    "damage": "none",
+    "fact": null
+  }
+}

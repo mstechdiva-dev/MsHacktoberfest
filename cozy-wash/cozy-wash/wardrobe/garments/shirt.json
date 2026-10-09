@@ -1,0 +1,29 @@
+{
+  "id": "shirt",
+  "name": "shirt",
+  "art": "shirt",
+  "fold": "shirt",
+  "fabrics": [
+    "cotton",
+    "linen",
+    "silk"
+  ],
+  "patterns": [
+    "solid",
+    "stripes",
+    "checks",
+    "plaid"
+  ],
+  "pocket": {
+    "chance": 0.3,
+    "contents": [
+      "tissue",
+      "coin",
+      "pen",
+      "phone",
+      "crayon"
+    ]
+  },
+  "pair": false,
+  "sturdyLooking": false
+}

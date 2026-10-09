@@ -1,0 +1,22 @@
+name: New color, pattern, fabric or garment
+description: Grow the wardrobe.
+labels: [wardrobe, good first issue]
+body:
+  - type: dropdown
+    id: part
+    attributes:
+      label: What kind
+      options: [color, pattern, fabric, garment]
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Name, hex color, care rules, or which art and fold it uses.
+  - type: checkboxes
+    id: claim
+    attributes:
+      label: Claim
+      options:
+        - label: I'd like to build this one.

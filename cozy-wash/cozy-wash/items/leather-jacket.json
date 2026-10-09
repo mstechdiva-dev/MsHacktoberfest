@@ -1,0 +1,31 @@
+{
+  "id": "leather-jacket",
+  "name": "Leather jacket",
+  "kind": "trap",
+  "bin": "nowash",
+  "fabric": "leather",
+  "color": "#5a3a26",
+  "pattern": "solid",
+  "art": "jacket",
+  "tags": [
+    "Dry clean only",
+    "Do not wash"
+  ],
+  "care": {
+    "gentle": true,
+    "maxTemp": "cold",
+    "bleach": false,
+    "dryer": false,
+    "shrinks": true
+  },
+  "fold": null,
+  "pair": false,
+  "pocket": null,
+  "rarity": "common",
+  "season": null,
+  "unlock": null,
+  "onWrong": {
+    "damage": "self",
+    "fact": "leather_ruined"
+  }
+}

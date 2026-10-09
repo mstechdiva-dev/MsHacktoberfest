@@ -1,0 +1,17 @@
+{
+  "id": "dish-towel",
+  "name": "dish towel",
+  "art": "towel",
+  "fold": "towel",
+  "fabrics": [
+    "cotton",
+    "linen"
+  ],
+  "patterns": [
+    "checks",
+    "stripes"
+  ],
+  "pair": false,
+  "sturdyLooking": false,
+  "pocket": null
+}

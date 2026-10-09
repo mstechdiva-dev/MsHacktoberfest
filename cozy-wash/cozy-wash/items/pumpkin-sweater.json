@@ -1,0 +1,32 @@
+{
+  "id": "pumpkin-sweater",
+  "name": "Pumpkin sweater",
+  "kind": "bonus",
+  "bin": "delicate",
+  "fabric": "wool",
+  "color": "#e8772e",
+  "pattern": "solid",
+  "art": "sweater",
+  "tags": [
+    "Gentle cycle",
+    "Cold water only",
+    "Hang dry"
+  ],
+  "care": {
+    "gentle": true,
+    "maxTemp": "cold",
+    "bleach": false,
+    "dryer": false,
+    "shrinks": true
+  },
+  "fold": "shirt",
+  "pair": false,
+  "pocket": null,
+  "rarity": "uncommon",
+  "season": "fall",
+  "unlock": null,
+  "onWrong": {
+    "damage": "none",
+    "fact": null
+  }
+}

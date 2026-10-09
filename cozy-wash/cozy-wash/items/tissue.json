@@ -1,0 +1,31 @@
+{
+  "id": "tissue",
+  "name": "Tissue",
+  "kind": "pocket",
+  "bin": "nowash",
+  "fabric": "paper",
+  "color": "#ffffff",
+  "pattern": "solid",
+  "art": "tissue",
+  "tags": [
+    "Check pockets"
+  ],
+  "care": {
+    "gentle": false,
+    "maxTemp": "cold",
+    "bleach": false,
+    "dryer": false,
+    "shrinks": false
+  },
+  "fold": null,
+  "pair": false,
+  "pocket": null,
+  "rarity": "common",
+  "season": null,
+  "unlock": null,
+  "onWrong": {
+    "damage": "none",
+    "fact": "tissue_lint"
+  },
+  "lint": true
+}

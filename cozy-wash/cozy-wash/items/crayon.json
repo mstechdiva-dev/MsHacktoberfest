@@ -1,0 +1,30 @@
+{
+  "id": "crayon",
+  "name": "Crayon",
+  "kind": "trap",
+  "bin": "nowash",
+  "fabric": "none",
+  "color": "#7a4fb0",
+  "pattern": "solid",
+  "art": "crayon",
+  "tags": [
+    "Do not wash"
+  ],
+  "care": {
+    "gentle": false,
+    "maxTemp": "cold",
+    "bleach": false,
+    "dryer": false,
+    "shrinks": false
+  },
+  "fold": null,
+  "pair": false,
+  "pocket": null,
+  "rarity": "common",
+  "season": null,
+  "unlock": null,
+  "onWrong": {
+    "damage": "stain",
+    "fact": "crayon_melt"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "bandana",
+  "viewBox": [
+    40,
+    40
+  ],
+  "outline": "M4 4 H36 V36 H4 Z",
+  "details": [
+    "M7 7 H33 V33 H7 Z"
+  ]
+}

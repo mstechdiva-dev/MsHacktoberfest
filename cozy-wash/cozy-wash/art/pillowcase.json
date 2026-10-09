@@ -1,0 +1,11 @@
+{
+  "id": "pillowcase",
+  "viewBox": [
+    44,
+    30
+  ],
+  "outline": "M2 4 Q2 2 4 2 H40 Q42 2 42 4 V26 Q42 28 40 28 H4 Q2 28 2 26 Z",
+  "details": [
+    "M34 2 V28"
+  ]
+}

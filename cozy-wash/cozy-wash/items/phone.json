@@ -1,0 +1,30 @@
+{
+  "id": "phone",
+  "name": "Phone",
+  "kind": "trap",
+  "bin": "nowash",
+  "fabric": "none",
+  "color": "#18394d",
+  "pattern": "solid",
+  "art": "phone",
+  "tags": [
+    "Do not wash"
+  ],
+  "care": {
+    "gentle": false,
+    "maxTemp": "cold",
+    "bleach": false,
+    "dryer": false,
+    "shrinks": false
+  },
+  "fold": null,
+  "pair": false,
+  "pocket": null,
+  "rarity": "common",
+  "season": null,
+  "unlock": null,
+  "onWrong": {
+    "damage": "self",
+    "fact": "phone_ruined"
+  }
+}

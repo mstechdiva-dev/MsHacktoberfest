@@ -1,0 +1,32 @@
+{
+  "id": "red-sock",
+  "name": "Red sock",
+  "kind": "everyday",
+  "bin": "color",
+  "fabric": "cotton",
+  "color": "#d33a3a",
+  "pattern": "solid",
+  "art": "sock",
+  "tags": [
+    "Bleeds",
+    "Wash with colors"
+  ],
+  "care": {
+    "gentle": false,
+    "maxTemp": "warm",
+    "bleach": false,
+    "dryer": true,
+    "shrinks": false
+  },
+  "fold": "socks",
+  "pair": true,
+  "pocket": null,
+  "rarity": "common",
+  "season": null,
+  "unlock": null,
+  "onWrong": {
+    "damage": "none",
+    "fact": "bleed"
+  },
+  "bleeder": 0.35
+}

@@ -1,0 +1,24 @@
+{
+  "id": "jeans",
+  "name": "jeans",
+  "art": "pants",
+  "fold": "pants",
+  "fabrics": [
+    "denim"
+  ],
+  "patterns": [
+    "solid"
+  ],
+  "pocket": {
+    "chance": 0.5,
+    "contents": [
+      "tissue",
+      "coin",
+      "pen",
+      "phone",
+      "crayon"
+    ]
+  },
+  "pair": false,
+  "sturdyLooking": false
+}

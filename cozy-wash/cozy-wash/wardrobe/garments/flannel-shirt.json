@@ -1,0 +1,17 @@
+{
+  "id": "flannel-shirt",
+  "name": "flannel shirt",
+  "art": "shirt",
+  "fold": "shirt",
+  "fabrics": [
+    "cotton",
+    "fleece"
+  ],
+  "patterns": [
+    "plaid",
+    "checks"
+  ],
+  "pair": false,
+  "sturdyLooking": false,
+  "pocket": null
+}

@@ -1,0 +1,17 @@
+{
+  "id": "tank-top",
+  "name": "tank top",
+  "art": "tank",
+  "fold": "shirt",
+  "fabrics": [
+    "cotton",
+    "jersey"
+  ],
+  "patterns": [
+    "solid",
+    "stripes"
+  ],
+  "pair": false,
+  "sturdyLooking": false,
+  "pocket": null
+}

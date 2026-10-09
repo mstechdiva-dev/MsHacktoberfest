@@ -1,0 +1,9 @@
+{
+  "models": [
+    "openai/gpt-oss-20b:free",
+    "openai/gpt-oss-120b:free"
+  ],
+  "maxTokens": 200,
+  "temperature": 0.9,
+  "timeoutMs": 8000
+}

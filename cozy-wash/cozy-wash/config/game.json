@@ -1,0 +1,129 @@
+{
+  "tiles": {
+    "count": 16,
+    "columns": 4,
+    "traps": 3,
+    "bonus": [
+      1,
+      2
+    ],
+    "pockets": 2,
+    "minLookAlikes": 1,
+    "minDelicates": 1,
+    "maxRepeatsFromYesterday": 4,
+    "allowSameTrapInPocket": false
+  },
+  "seasonItemChance": 0.6,
+  "rarity": {
+    "common": 70,
+    "uncommon": 25,
+    "rare": 5
+  },
+  "closet": {
+    "startColors": [
+      "white",
+      "cream",
+      "gray",
+      "charcoal",
+      "black",
+      "navy",
+      "red",
+      "blue",
+      "green",
+      "yellow",
+      "pink",
+      "brown"
+    ],
+    "startPatterns": [
+      "solid",
+      "stripes"
+    ],
+    "unlockOrder": [
+      "mustard",
+      "plaid",
+      "teal",
+      "dots",
+      "lavender",
+      "orange",
+      "checks",
+      "mint",
+      "cherry",
+      "stars",
+      "sky",
+      "purple",
+      "hearts",
+      "ivory",
+      "light-gray",
+      "denim-blue",
+      "blush-pink"
+    ]
+  },
+  "dosing": {
+    "detergent": 4,
+    "softener": 3,
+    "bleach": 3,
+    "rescue": 1
+  },
+  "washPhases": {
+    "fill": 8,
+    "tumble": 20,
+    "drain": 7,
+    "spin": 10
+  },
+  "rewashPhases": {
+    "fill": 5,
+    "tumble": 12,
+    "drain": 4,
+    "spin": 4
+  },
+  "dryerSeconds": 15,
+  "rules": {
+    "bleedTemp": {
+      "cold": -0.25,
+      "warm": 0.1,
+      "hot": 0.35
+    },
+    "bleedPerBleach": 0.05,
+    "bleedMax": 0.95,
+    "sudsDetergent": 4,
+    "sudsComboDetergent": 3,
+    "sudsComboSoftener": 2,
+    "heavyBleach": 3,
+    "rewashBase": 0.35,
+    "rewashPerBleach": 0.2,
+    "rewashRescue": 0.3,
+    "rewashNotCold": 0.05,
+    "rewashMax": 0.9,
+    "rewashLimit": 3
+  },
+  "score": {
+    "ruined": -20,
+    "bleed": -20,
+    "suds": -10,
+    "heavyBleach": -10,
+    "shrunk": -15,
+    "stretched": -10,
+    "stained": -10,
+    "lint": -5,
+    "grubby": -15,
+    "static": -5,
+    "fresh": 5,
+    "goodResult": 80,
+    "tidy": 1
+  },
+  "pay": {
+    "tapHoldMs": 1000,
+    "tapGlitchChance": 0.05
+  },
+  "status": {
+    "timeoutMs": 3000,
+    "autoCheckMinutes": 3,
+    "busyMinutes": 2
+  },
+  "closedLoop": {
+    "sleepMinutes": 30
+  },
+  "progress": {
+    "cleanLoadScore": 90
+  }
+}

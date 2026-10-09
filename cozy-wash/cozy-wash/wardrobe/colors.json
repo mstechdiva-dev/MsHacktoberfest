@@ -1,0 +1,175 @@
+[
+  {
+    "id": "white",
+    "name": "White",
+    "hex": "#ffffff",
+    "bin": "white",
+    "bleed": 0
+  },
+  {
+    "id": "ivory",
+    "name": "Ivory",
+    "hex": "#fbf6e9",
+    "bin": "white",
+    "bleed": 0,
+    "looksLike": "white"
+  },
+  {
+    "id": "cream",
+    "name": "Cream",
+    "hex": "#f3ead2",
+    "bin": "white",
+    "bleed": 0,
+    "looksLike": "white"
+  },
+  {
+    "id": "light-gray",
+    "name": "Light gray",
+    "hex": "#d9dde1",
+    "bin": "white",
+    "bleed": 0
+  },
+  {
+    "id": "gray",
+    "name": "Gray",
+    "hex": "#9aa5ad",
+    "bin": "dark",
+    "bleed": 0
+  },
+  {
+    "id": "charcoal",
+    "name": "Charcoal",
+    "hex": "#3d4650",
+    "bin": "dark",
+    "bleed": 0,
+    "looksLike": "black"
+  },
+  {
+    "id": "black",
+    "name": "Black",
+    "hex": "#16191d",
+    "bin": "dark",
+    "bleed": 0.02
+  },
+  {
+    "id": "navy",
+    "name": "Navy",
+    "hex": "#1f2a44",
+    "bin": "dark",
+    "bleed": 0.05,
+    "looksLike": "black"
+  },
+  {
+    "id": "brown",
+    "name": "Brown",
+    "hex": "#7a5536",
+    "bin": "dark",
+    "bleed": 0.05
+  },
+  {
+    "id": "denim-blue",
+    "name": "Denim blue",
+    "hex": "#3c5a86",
+    "bin": "dark",
+    "bleed": 0.15
+  },
+  {
+    "id": "red",
+    "name": "Red",
+    "hex": "#d33a3a",
+    "bin": "color",
+    "bleed": 0.35
+  },
+  {
+    "id": "cherry",
+    "name": "Cherry",
+    "hex": "#c2185b",
+    "bin": "color",
+    "bleed": 0.3
+  },
+  {
+    "id": "orange",
+    "name": "Orange",
+    "hex": "#ef8a3c",
+    "bin": "color",
+    "bleed": 0.1
+  },
+  {
+    "id": "mustard",
+    "name": "Mustard",
+    "hex": "#e3b341",
+    "bin": "color",
+    "bleed": 0.05
+  },
+  {
+    "id": "yellow",
+    "name": "Yellow",
+    "hex": "#f2d14b",
+    "bin": "color",
+    "bleed": 0
+  },
+  {
+    "id": "mint",
+    "name": "Mint",
+    "hex": "#a8e0c8",
+    "bin": "color",
+    "bleed": 0
+  },
+  {
+    "id": "green",
+    "name": "Green",
+    "hex": "#4f9a63",
+    "bin": "color",
+    "bleed": 0.05
+  },
+  {
+    "id": "teal",
+    "name": "Teal",
+    "hex": "#2a9bb5",
+    "bin": "color",
+    "bleed": 0.1
+  },
+  {
+    "id": "blue",
+    "name": "Blue",
+    "hex": "#3d78c4",
+    "bin": "color",
+    "bleed": 0.1
+  },
+  {
+    "id": "sky",
+    "name": "Sky",
+    "hex": "#9cc9ef",
+    "bin": "color",
+    "bleed": 0
+  },
+  {
+    "id": "lavender",
+    "name": "Lavender",
+    "hex": "#b9a6e0",
+    "bin": "color",
+    "bleed": 0
+  },
+  {
+    "id": "purple",
+    "name": "Purple",
+    "hex": "#7a4fb0",
+    "bin": "color",
+    "bleed": 0.2
+  },
+  {
+    "id": "blush-pink",
+    "name": "Blush pink",
+    "hex": "#f6dbe0",
+    "bin": "color",
+    "bleed": 0,
+    "looksLike": "white"
+  },
+  {
+    "id": "pink",
+    "name": "Pink",
+    "hex": "#f3a9bd",
+    "bin": "color",
+    "bleed": 0.05
+  }
+]

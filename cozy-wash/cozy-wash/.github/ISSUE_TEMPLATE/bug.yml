@@ -1,0 +1,19 @@
+name: Bug
+description: Something in the game isn't working right.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How can we see it?
+      description: Steps, and the URL switches you used (for example ?fast=1).
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and device

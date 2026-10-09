@@ -1,0 +1,25 @@
+{
+  "id": "jacket",
+  "name": "jacket",
+  "art": "jacket",
+  "fold": "shirt",
+  "fabrics": [
+    "denim",
+    "fleece"
+  ],
+  "patterns": [
+    "solid"
+  ],
+  "sturdyLooking": true,
+  "pocket": {
+    "chance": 0.4,
+    "contents": [
+      "tissue",
+      "coin",
+      "pen",
+      "phone",
+      "crayon"
+    ]
+  },
+  "pair": false
+}

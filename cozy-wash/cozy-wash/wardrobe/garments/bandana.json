@@ -1,0 +1,17 @@
+{
+  "id": "bandana",
+  "name": "bandana",
+  "art": "bandana",
+  "fold": "triangle",
+  "fabrics": [
+    "cotton"
+  ],
+  "patterns": [
+    "solid",
+    "dots",
+    "stars"
+  ],
+  "pair": false,
+  "sturdyLooking": false,
+  "pocket": null
+}

@@ -1,0 +1,26 @@
+{
+  "id": "sweatpants",
+  "name": "sweatpants",
+  "art": "pants",
+  "fold": "pants",
+  "fabrics": [
+    "fleece",
+    "cotton"
+  ],
+  "patterns": [
+    "solid",
+    "stripes"
+  ],
+  "pocket": {
+    "chance": 0.3,
+    "contents": [
+      "tissue",
+      "coin",
+      "pen",
+      "phone",
+      "crayon"
+    ]
+  },
+  "pair": false,
+  "sturdyLooking": false
+}

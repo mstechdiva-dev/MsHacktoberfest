@@ -1,0 +1,34 @@
+{
+  "id": "cream-knit-sweater",
+  "name": "Cream knit sweater",
+  "kind": "everyday",
+  "bin": "delicate",
+  "fabric": "wool",
+  "color": "#f3ead2",
+  "pattern": "solid",
+  "art": "sweater",
+  "tags": [
+    "Gentle cycle",
+    "Cold water only",
+    "Hang dry"
+  ],
+  "care": {
+    "gentle": true,
+    "maxTemp": "cold",
+    "bleach": false,
+    "dryer": false,
+    "shrinks": true
+  },
+  "fold": "shirt",
+  "pair": false,
+  "pocket": null,
+  "rarity": "common",
+  "season": null,
+  "unlock": null,
+  "onWrong": {
+    "damage": "none",
+    "fact": null
+  },
+  "lookAlike": true,
+  "looksLike": "white"
+}

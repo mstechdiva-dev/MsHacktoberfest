@@ -1,0 +1,30 @@
+{
+  "id": "keys",
+  "name": "Keys",
+  "kind": "trap",
+  "bin": "nowash",
+  "fabric": "none",
+  "color": "#b9a36a",
+  "pattern": "solid",
+  "art": "keys",
+  "tags": [
+    "Do not wash"
+  ],
+  "care": {
+    "gentle": false,
+    "maxTemp": "cold",
+    "bleach": false,
+    "dryer": false,
+    "shrinks": false
+  },
+  "fold": null,
+  "pair": false,
+  "pocket": null,
+  "rarity": "common",
+  "season": null,
+  "unlock": null,
+  "onWrong": {
+    "damage": "none",
+    "fact": "keys_clank"
+  }
+}

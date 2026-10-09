@@ -1,0 +1,17 @@
+{
+  "id": "sweater",
+  "name": "sweater",
+  "art": "sweater",
+  "fold": "shirt",
+  "fabrics": [
+    "wool",
+    "cotton"
+  ],
+  "patterns": [
+    "solid",
+    "stripes"
+  ],
+  "sturdyLooking": true,
+  "pair": false,
+  "pocket": null
+}

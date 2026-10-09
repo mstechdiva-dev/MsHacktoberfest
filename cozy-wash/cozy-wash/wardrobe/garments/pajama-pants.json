@@ -1,0 +1,20 @@
+{
+  "id": "pajama-pants",
+  "name": "pajama pants",
+  "art": "pants",
+  "fold": "pants",
+  "fabrics": [
+    "cotton",
+    "fleece"
+  ],
+  "patterns": [
+    "plaid",
+    "checks",
+    "stars",
+    "hearts",
+    "dots"
+  ],
+  "pair": false,
+  "sturdyLooking": false,
+  "pocket": null
+}

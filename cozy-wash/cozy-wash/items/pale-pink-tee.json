@@ -1,0 +1,32 @@
+{
+  "id": "pale-pink-tee",
+  "name": "Pale pink tee",
+  "kind": "everyday",
+  "bin": "color",
+  "fabric": "cotton",
+  "color": "#f8e3e6",
+  "pattern": "solid",
+  "art": "tee",
+  "tags": [
+    "Wash with colors"
+  ],
+  "care": {
+    "gentle": false,
+    "maxTemp": "warm",
+    "bleach": false,
+    "dryer": true,
+    "shrinks": false
+  },
+  "fold": "shirt",
+  "pair": false,
+  "pocket": null,
+  "rarity": "common",
+  "season": null,
+  "unlock": null,
+  "onWrong": {
+    "damage": "none",
+    "fact": null
+  },
+  "lookAlike": true,
+  "looksLike": "white"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "crayon",
+  "viewBox": [
+    40,
+    12
+  ],
+  "outline": "M2 6 L10 1 H38 V11 H10 Z",
+  "details": [
+    "M14 1 V11",
+    "M32 1 V11"
+  ]
+}

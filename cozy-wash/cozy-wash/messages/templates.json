@@ -1,0 +1,282 @@
+{
+  "factPriority": [
+    "phone_ruined",
+    "leather_ruined",
+    "silk_ruined",
+    "bleed",
+    "crayon_melt",
+    "pen_ink",
+    "bleach_ruined",
+    "cat_woke",
+    "shrunk",
+    "dryer_shrunk",
+    "stretched",
+    "suds",
+    "tissue_lint",
+    "grubby",
+    "colors_tired",
+    "keys_clank",
+    "teddy_flat",
+    "rewash_faded",
+    "rewash_fixed",
+    "static",
+    "lost_sock",
+    "rack_saved",
+    "fresh",
+    "clean"
+  ],
+  "houseNotes": {
+    "clean": [
+      "Fresh and clean. Very satisfying.",
+      "Spotless. That's a good load.",
+      "Clean, soft and smelling great."
+    ],
+    "bleed": [
+      "Your whites are now a very confident pink.",
+      "The red sock got loose in the whites again."
+    ],
+    "suds": [
+      "Too much soap. Suds are escaping the door.",
+      "That was a bubble bath, not a wash."
+    ],
+    "bleach_ruined": [
+      "Bleach and that fabric did not get along.",
+      "The bleach left pale spots behind."
+    ],
+    "colors_tired": [
+      "That much bleach left the colors looking tired.",
+      "The colors came out a little faded."
+    ],
+    "shrunk": [
+      "Something came out a size smaller.",
+      "Hot water shrank one of your pieces."
+    ],
+    "stretched": [
+      "The normal cycle stretched a delicate piece.",
+      "A gentle item lost its shape on the normal cycle."
+    ],
+    "teddy_flat": [
+      "Hot water left the teddy bear a little flat.",
+      "Teddy's fur is a bit squished from the hot water."
+    ],
+    "phone_ruined": [
+      "The phone did not survive. The socks are mourning.",
+      "The phone went for a swim. It won't be calling anyone."
+    ],
+    "keys_clank": [
+      "Something metal clanked around the whole cycle.",
+      "Keys rattled through every spin."
+    ],
+    "pen_ink": [
+      "A pen leaked ink on its neighbors.",
+      "The pen burst. There's ink on the load."
+    ],
+    "crayon_melt": [
+      "A crayon was hiding in a pocket. Things got colorful.",
+      "A melted crayon left marks on the load."
+    ],
+    "cat_woke": [
+      "The cat woke up mid-cycle. The cat is fine, just offended.",
+      "A very grumpy cat climbed out. Fine, just offended."
+    ],
+    "tissue_lint": [
+      "A tissue exploded. Lint everywhere.",
+      "Someone forgot a tissue. The darks are fuzzy now."
+    ],
+    "leather_ruined": [
+      "The leather jacket did not like the water.",
+      "That jacket was dry clean only. It shows."
+    ],
+    "silk_ruined": [
+      "The silk blouse wrinkled beyond saving.",
+      "Dry clean only meant dry clean only."
+    ],
+    "grubby": [
+      "No detergent? These are only sort of clean.",
+      "Water alone didn't quite do it."
+    ],
+    "rewash_fixed": [
+      "The rewash worked. Good as new.",
+      "Second try did the trick."
+    ],
+    "rewash_faded": [
+      "The rewash helped, but it's still not quite right.",
+      "A little better, not perfect."
+    ],
+    "static": [
+      "No dryer sheet. Static cling everywhere.",
+      "Zap. The socks are stuck to the shirts."
+    ],
+    "fresh": [
+      "A dryer sheet left everything soft and fresh.",
+      "Warm, fluffy and fresh."
+    ],
+    "lost_sock": [
+      "A sock is missing its partner.",
+      "One lonely sock today."
+    ],
+    "rack_saved": [
+      "Good call hanging that on the rack.",
+      "The rack kept that piece safe."
+    ],
+    "dryer_shrunk": [
+      "Something tagged Hang dry shrank in the dryer.",
+      "That one should have gone on the rack."
+    ]
+  },
+  "noteFallback": {
+    "headline": [
+      "What a load of laundry!",
+      "Thanks for washing with us today.",
+      "Another cozy basket, all done."
+    ],
+    "byFact": {
+      "clean": [
+        "Fresh and clean. Very satisfying."
+      ],
+      "bleed": [
+        "Your whites are now a very confident pink."
+      ],
+      "suds": [
+        "Too much soap. Suds are escaping the door."
+      ],
+      "bleach_ruined": [
+        "Bleach and that fabric did not get along."
+      ],
+      "colors_tired": [
+        "That much bleach left the colors looking tired."
+      ],
+      "shrunk": [
+        "Something came out a size smaller."
+      ],
+      "stretched": [
+        "The normal cycle stretched a delicate piece."
+      ],
+      "teddy_flat": [
+        "Hot water left the teddy bear a little flat."
+      ],
+      "phone_ruined": [
+        "The phone did not survive. The socks are mourning."
+      ],
+      "keys_clank": [
+        "Something metal clanked around the whole cycle."
+      ],
+      "pen_ink": [
+        "A pen leaked ink on its neighbors."
+      ],
+      "crayon_melt": [
+        "A crayon was hiding in a pocket. Things got colorful."
+      ],
+      "cat_woke": [
+        "The cat woke up mid-cycle. The cat is fine, just offended."
+      ],
+      "tissue_lint": [
+        "A tissue exploded. Lint everywhere."
+      ],
+      "leather_ruined": [
+        "The leather jacket did not like the water."
+      ],
+      "silk_ruined": [
+        "The silk blouse wrinkled beyond saving."
+      ],
+      "grubby": [
+        "No detergent? These are only sort of clean."
+      ],
+      "rewash_fixed": [
+        "The rewash worked. Good as new."
+      ],
+      "rewash_faded": [
+        "The rewash helped, but it's still not quite right."
+      ],
+      "static": [
+        "No dryer sheet. Static cling everywhere."
+      ],
+      "fresh": [
+        "A dryer sheet left everything soft and fresh."
+      ],
+      "lost_sock": [
+        "A sock is missing its partner."
+      ],
+      "rack_saved": [
+        "Good call hanging that on the rack."
+      ],
+      "dryer_shrunk": [
+        "Something tagged Hang dry shrank in the dryer."
+      ]
+    }
+  },
+  "titles": [
+    {
+      "id": "sock-whisperer",
+      "name": "Sock Whisperer",
+      "rule": "allPairsMatched"
+    },
+    {
+      "id": "pink-load-pro",
+      "name": "Pink Load Pro",
+      "rule": "bleedHappened"
+    },
+    {
+      "id": "cat-rescuer",
+      "name": "Cat Rescuer",
+      "rule": "catCaught"
+    },
+    {
+      "id": "pocket-detective",
+      "name": "Pocket Detective",
+      "rule": "allPocketsChecked"
+    },
+    {
+      "id": "fresh-start",
+      "name": "Fresh Start",
+      "rule": "allLoadsAbove90"
+    },
+    {
+      "id": "static-shock",
+      "name": "Static Shock",
+      "rule": "noDryerSheets"
+    }
+  ],
+  "defaultTitle": "Laundry Star",
+  "signs": {
+    "open": "Open",
+    "closed": "Cozy Wash is closed for the day.|We've washed enough bundles today. Back at {time}.",
+    "maintenance": "Cozy Wash is closed for a quick tidy-up.|Back soon.",
+    "busy": "The attendant is busy, so here's a note from the house.",
+    "offline": "Can't reach Cozy Wash right now.|You can still play. Your receipt will use a house note.",
+    "practice": "Practice mode: no live notes.",
+    "done": "See you tomorrow",
+    "reopened": "Cozy Wash is open again!"
+  },
+  "screens": {
+    "goodbye": "Your laundry's all done for today. Come back tomorrow for a fresh basket.",
+    "unlock": "New in your closet: {name}!",
+    "lostSock": "Lost sock?",
+    "oneSheet": "One sheet is plenty.",
+    "receiptThanks": [
+      "Have a nice day!",
+      "Thank you for visiting Cozy Wash."
+    ],
+    "stillThere": "Still there?",
+    "savedIt": "Saved it!",
+    "catPurr": "The cat purrs. Rescued.",
+    "tryAgain": "Reader glitched, try again",
+    "enterButton": "Enter Cozy Wash",
+    "closedButton": "Closed for today",
+    "maintenanceButton": "Closed for a tidy-up",
+    "doneButton": "See you tomorrow",
+    "startToday": "Start today's wash",
+    "closedToday": "Today at Cozy Wash: {gamesToday} visits finished.",
+    "closedYou": "You: {washed} washed · {dried} dried · {folded} folded (all-time)",
+    "stillClosed": "Still closed. Try again later.",
+    "keepListening": "Keep listening",
+    "checkAgain": "Check again",
+    "retry": "Try again",
+    "peek": "See the closed sign",
+    "copy": "Copy",
+    "exit": "Exit",
+    "unlockShelf": "New on your shelf: {name}!",
+    "receiptShelf": "New on your shelf",
+    "receiptTidy": "Tidy bonus"
+  }
+}
