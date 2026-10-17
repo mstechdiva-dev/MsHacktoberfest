@@ -35,7 +35,7 @@ npm test
 
 ## Memory Monster
 
-![Memory Monster landing page](memory-monster/docs/cover.png)
+![Memory Monster: when your memory fills up, he makes sure you notice](memory-monster/docs/social-card.png)
 
 Memory Monster watches how much memory your computer is using. At 80% or more the room darkens, a door opens, and a hooded figure steps out. A card lists the programs using the most memory and asks you to close them. When memory drops below 75%, he steps back through the door.
 

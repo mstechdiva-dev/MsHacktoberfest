@@ -4,6 +4,8 @@
 
 Idea and design by Cheryl. Owned 100% by XYZ Agents LLC. Open source under the license in `LICENSE`.
 
+![Memory Monster: when your memory fills up, he makes sure you notice](docs/social-card.png)
+
 ## The pages
 
 | Address | What it is |
