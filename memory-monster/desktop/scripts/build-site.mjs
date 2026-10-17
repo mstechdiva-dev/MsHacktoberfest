@@ -8,6 +8,13 @@ const here = import.meta.dirname;
 const root = path.resolve(here, "..", "..");
 const site = path.resolve(here, "..", "site");
 
+// The site's own packages (Next.js and React) are installed on the first run, so the desktop
+// folder is all anyone has to set up by hand.
+if (!fs.existsSync(path.join(root, "node_modules", "next"))) {
+  console.log("Installing the site's packages (first run only)...");
+  execSync("npm install", { cwd: root, stdio: "inherit" });
+}
+
 execSync("npm run build", { cwd: root, env: { ...process.env, MM_EXPORT: "1" }, stdio: "inherit" });
 
 fs.rmSync(site, { recursive: true, force: true });

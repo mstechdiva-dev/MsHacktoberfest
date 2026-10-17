@@ -6,6 +6,33 @@ Idea and design by Cheryl. Owned 100% by XYZ Agents LLC. Open source under the l
 
 ![Memory Monster: when your memory fills up, he makes sure you notice](docs/social-card.png)
 
+## Start here
+
+Pick how you want to use it. You do not need to understand the code for any of these.
+
+### A. The Windows desktop app (the real thing)
+
+He appears over your whole screen, on top of your other programs, and the mouse goes straight through to your work. It reads your memory itself, so there is nothing else to set up.
+
+1. Install **Node.js** (the LTS version) from https://nodejs.org if you do not have it.
+2. Get this folder onto your computer: on GitHub press **Code, Download ZIP**, then unzip it. (Or `git clone` it.)
+3. Open the `memory-monster` folder, then the `desktop` folder, and double-click **`run-memory-monster.bat`**. The first run installs what it needs and builds the site, which takes a few minutes. Later runs start in seconds.
+4. Look for his small icon in the system tray, bottom-right near the clock (click the little arrow if it is hidden). Right-click it and choose **Test the figure** to see him straight away.
+
+Nothing appears on screen until memory crosses the line (80% by default). The full guide, with the tray menu, the installer and what to do if something goes wrong, is in [`desktop/README.md`](desktop/README.md).
+
+### B. Try the website on your computer
+
+1. Install **Node.js** as above, and open a terminal in this `memory-monster` folder.
+2. Run `npm install` (once), then `npm run dev`.
+3. Open http://localhost:3000. Press **Open the app**, then **Test the figure**. Drag the slider to see him arrive.
+
+This is also how you work on the code. `npm test` runs the tests and `npm run check-skins` checks the skins.
+
+### C. Put the website on Vercel
+
+See [Put it on Vercel](#put-it-on-vercel) below. There are no environment variables to set.
+
 ## The pages
 
 | Address | What it is |
@@ -13,6 +40,7 @@ Idea and design by Cheryl. Owned 100% by XYZ Agents LLC. Open source under the l
 | `/` | The landing page: a looping demo, how it works, everything you can change as pictures, the finished looks, and the short video |
 | `/app` | Memory Monster itself |
 | `/looks` | The Look Studio |
+| `/overlay` | The page the desktop app draws over your screen. It only works inside the desktop app. |
 
 The landing page shows the short video only when `public/memory-monster-short.mp4` is in the project. Without it, the video section is left out.
 
@@ -20,21 +48,14 @@ The landing page shows the short video only when `public/memory-monster-short.mp
 
 Memory Monster watches how much memory is in use.
 
-1. **Under 80%:** nothing happens. The page sits quiet.
-2. **At 80% or more:** the room darkens, a door fades in with a red glow and swings open, and a hooded figure steps out. His face is a black void with two red eyes.
+1. **Under 80%:** nothing happens.
+2. **At 80% or more:** the room darkens, the door opens, and a dark figure steps out.
 3. **While it stays high:** a card in the top-left corner lists the programs using the most memory and asks you to close them. It repeats every 5 minutes.
 4. **Under 75%:** he steps back through the door, the door closes, and the room brightens.
 
 The gap between 80 and 75 is on purpose. Without it he would pop in and out every time your memory hovers around one number.
 
-## Two ways to run it
-
-- **The website** (this folder, deployed to Vercel). It lives in a browser window. See below.
-- **The Windows desktop app** (`desktop/`). It draws over your whole screen, on top of other programs, with the mouse passing straight through. It reads your memory itself, so it needs no helper and no Vercel. See [`desktop/README.md`](desktop/README.md).
-
-## How the website runs
-
-Memory Monster is a website. You deploy it to Vercel and open it in a browser. There is no server code and no database: the whole site is static files.
+## How the website gets your memory
 
 A website can't see how full your computer is, so the page gets its number from one of three places. You pick in Settings:
 
@@ -42,13 +63,15 @@ A website can't see how full your computer is, so the page gets its number from 
 | --- | --- | --- |
 | Demo slider | A slider on the page | Seeing the door and figure without filling anything |
 | This browser tab only | The tab's own memory use (Chrome and Edge only) | A quick look. It does **not** measure your computer. |
-| The helper | Real memory use for the whole computer, and the biggest programs | The real thing |
+| The helper | Real memory use for the whole computer, and the biggest programs | The real thing, in the browser |
 
-The helper is a small program that runs on your own computer. See `helper/README.md`. It listens only on `127.0.0.1`, so nothing outside your computer can reach it, and it needs a code that only your browser knows.
+The helper is a small program that runs on your own computer. See [`helper/README.md`](helper/README.md). It listens only on `127.0.0.1`, so nothing outside your computer can reach it, and it needs a code that only your browser knows. **The desktop app does not need the helper.**
 
-A website also can't draw over your desktop. Open the page in its own window, press **Full screen**, or press **Pop out** for a small always-on-top window (Chrome and Edge), and leave it where you can see it. You can also turn on a notification in Settings, so a hidden tab still tells you when he arrives. For the real thing, over your whole screen, use the desktop app. Without the helper, the figure reacts to the slider or to the tab; with the helper he reacts to your real memory.
+A website also can't draw over your desktop. Open the page in its own window, press **Full screen**, or press **Pop out** for a small always-on-top window (Chrome and Edge), and leave it where you can see it. You can also turn on a notification in Settings, so a hidden tab still tells you when he arrives. For the real thing, over your whole screen, use the desktop app.
 
 ## Put it on Vercel
+
+The website is plain static files: no server code, no database, no accounts.
 
 1. Put this folder in a GitHub repo.
 2. In Vercel, choose **Add New Project**, pick the repo, and deploy. The defaults work: Vercel detects Next.js on its own.
@@ -99,8 +122,8 @@ The defaults live in `settings.json`. Change one, deploy again, and everyone get
 | `reminderMinutes` | 5 | How often the reminder repeats while memory stays high. |
 | `snoozeMinutes` | 15 | How long Snooze lasts. |
 | `autoOnHours` | 8 | How long Turn off lasts before it turns itself back on. |
-| `pollSeconds` | 3 | How often the page asks the helper for a new reading. |
-| `skin` | `hooded-figure` | Which figure and door to use. |
+| `pollSeconds` | 3 | How often the website asks the helper for a new reading. |
+| `skin` | `shadow-form` | Which figure and door to use. |
 
 ## Change how he looks
 
@@ -113,19 +136,13 @@ The figure, the door and what he says all live in a skin folder, so you can also
 ## Privacy
 
 - The site has no accounts, no analytics and no server of its own.
+- The desktop app makes no network calls at all, except to its own page on `127.0.0.1` inside the app.
 - Your settings, source choice and helper code are saved in your browser only.
 - The memory reading and program names go from the helper on your computer to the page in your browser. They are not sent anywhere else.
 
-## Why the helper is Windows-first
+## Why it is Windows-first
 
-Windows gives a clear "percent of memory in use" reading, and the 80 and 75 rules are built on it. The helper is written for that. Its memory reading runs on any system with Node, but macOS keeps memory filled on purpose, so a high percent is normal there and the rules would need to be different. A Mac or Linux version would be its own game, not a port. CONTRIBUTING.md says how to start one.
-
-## Run it on your own computer for development
-
-You need Node.js 20 or newer.
-
-- `npm install` then `npm run dev` opens it at http://localhost:3000
-- `npm test` runs the tests
+Windows gives a clear "percent of memory in use" reading, and the 80 and 75 rules are built on it. The desktop app and the helper are written for that. Their memory reading runs on any system with Node, but macOS keeps memory filled on purpose, so a high percent is normal there and the rules would need to be different. A Mac or Linux version would be its own game, not a port. CONTRIBUTING.md says how to start one.
 
 ## Videos
 

@@ -1,5 +1,7 @@
 # Memory Monster helper
 
+**On Windows, the desktop app (`../desktop/`) reads your memory itself and does not need this helper.** The helper is only for using the website in a browser with real readings.
+
 A website cannot see how full your computer's memory is. This small program can. It runs on your own computer, listens only on `127.0.0.1` (nothing outside your computer can reach it), and answers the Memory Monster page.
 
 1. Install Node.js (version 20 or newer).
