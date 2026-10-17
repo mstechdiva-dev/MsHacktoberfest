@@ -4,6 +4,8 @@
 
 Idea and design by Cheryl. Owned 100% by XYZ Agents LLC. Open source under the license in `LICENSE`.
 
+Live at [memory-haunt.vercel.app](https://memory-haunt.vercel.app).
+
 ![Memory Monster: when your memory fills up, he makes sure you notice](docs/social-card.png)
 
 ## Start here
