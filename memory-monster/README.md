@@ -18,7 +18,7 @@ He appears over your whole screen, on top of your other programs, and the mouse 
 
 1. Install **Node.js** (the LTS version) from https://nodejs.org if you do not have it.
 2. Get this folder onto your computer: on GitHub press **Code, Download ZIP**, then unzip it. (Or `git clone` it.)
-3. Open the `memory-monster` folder, then the `desktop` folder, and double-click **`run-memory-monster.bat`**. The first run installs what it needs and builds the site, which takes a few minutes. Later runs start in seconds.
+3. Open the `memory-monster` folder, then the `desktop` folder, and double-click **`run-memory-monster.bat`**. The first run installs what it needs and builds the site, which takes a few minutes. Later runs start in seconds. If you change a skin or a setting later, run the file again and it rebuilds by itself.
 4. Look for his small icon in the system tray, bottom-right near the clock (click the little arrow if it is hidden). Right-click it and choose **Test the figure** to see him straight away.
 
 Nothing appears on screen until memory crosses the line (80% by default). The full guide, with the tray menu, the installer and what to do if something goes wrong, is in [`desktop/README.md`](desktop/README.md).

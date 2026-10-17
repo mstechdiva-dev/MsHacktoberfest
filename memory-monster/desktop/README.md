@@ -14,7 +14,7 @@ You need **Node.js** (the LTS version) from https://nodejs.org. That is the only
 
 1. Open this `desktop` folder in File Explorer.
 2. Double-click **`run-memory-monster.bat`**.
-3. Wait. The first run installs what it needs and builds the site, which takes a few minutes and prints a lot of text. Later runs start in seconds.
+3. Wait. The first run installs what it needs and builds the site, which takes a few minutes and prints a lot of text. Later runs start in seconds. If you have changed a skin, a setting or the code since the last run, it notices and rebuilds the site by itself (about half a minute) before starting.
 4. Look for his small icon in the **system tray**, bottom-right near the clock. If you do not see it, click the little arrow (^) to show hidden icons. You can drag the icon out of that list to keep it visible.
 5. Right-click the icon and choose **Test the figure**. The screen darkens, the door opens, and he steps out for about 16 seconds.
 
@@ -29,7 +29,7 @@ npm install
 npm run dev
 ```
 
-`npm run dev` builds the site and starts the app. After the first time, `npm start` starts it without rebuilding. Run `npm run build:site` again whenever you change the website code, so the app picks the change up.
+`npm run dev` always rebuilds the site and starts the app. `npm start` rebuilds only if something changed, so it is quick when nothing did. You never have to remember to rebuild: change a file, start the app, and it picks the change up. To force a rebuild, run `npm run build:site`.
 
 ## The tray menu
 
@@ -50,6 +50,15 @@ Snooze, Turn off and Quit work at any moment, even while he is on screen, so the
 ## The card
 
 The card in the top-left lists the programs using the most memory. **Close it** asks inside the card first. Only **Yes, close it** sends the request, and it asks the program politely (no force close), so a program with unsaved work can still ask you to save. System programs are never listed. Anything you have not saved in a program can still be lost, so save first.
+
+## Change how he looks
+
+There are two ways, and they work differently:
+
+- **Pick a look in the app (just for you).** Right-click the tray icon, choose **Look Studio...**, and pick his face, outfit, door and eyes. It applies to the overlay at once. The choice is saved in this app only. A look you pick on the website does not carry over, and the other way round.
+- **Edit the files (changes the default).** Change a skin in `skins/` or `community-skins/`, or the defaults in `settings.json`, in the folder above this one. Then quit Memory Monster and start it again (double-click `run-memory-monster.bat`). It sees that the files changed and rebuilds the site before starting. A choice you made in the app still wins over the file. To go back to the file's version, use **Back to the skin's own look** in the Look Studio, and **Back to the defaults** in Settings.
+
+How to make a skin is in [`../MAKE-YOUR-OWN-FIGURE.md`](../MAKE-YOUR-OWN-FIGURE.md).
 
 ## Make him arrive sooner (to see it for real)
 
@@ -75,8 +84,9 @@ The installer is not code-signed, so Windows may show a "Windows protected your 
 | The install or build stops with red errors | Check your internet connection and run it again. The first run downloads the packages it needs. |
 | I cannot find the tray icon | Click the little arrow (^) near the clock. Drag his icon out to keep it visible. |
 | Nothing ever appears | He only comes out when memory reaches the arrival number. Right-click the icon and choose **Test the figure** to check it works, or lower the number (see above). |
-| "The site files are missing" | Run `npm run build:site` in this folder, then start it again. |
-| The window opens but is blank | The site has to be built first. Run `npm run build:site`. |
+| "The site files are missing" | Start it with `run-memory-monster.bat` (or `npm start`). It builds the site when it is missing. To force it, run `npm run build:site`. |
+| The window opens but is blank | The site did not build. Run `npm run build:site` and read the messages. |
+| I changed a skin or setting and nothing is different | Quit him from the tray, then start him again so he rebuilds. If you picked a look or a setting inside the app, that choice wins over the file: use **Back to the skin's own look** in the Look Studio, or **Back to the defaults** in Settings. |
 | Nothing happens when I double-click the .bat file | Right-click it, choose **Open**, and read the message. If you downloaded a ZIP, make sure you unzipped it first. |
 | The installer build says "cannot create symbolic link" | Turn on **Developer Mode** (Windows Settings, Privacy and security, For developers), or run the terminal as administrator, then try again. |
 | I want to see what it is reading | In PowerShell run `$env:MM_DEBUG=1; npm start`. In Command Prompt run `set MM_DEBUG=1` and then `npm start`. It prints each memory reading, so you can compare the percent to Task Manager. |
@@ -89,10 +99,11 @@ The installer is not code-signed, so Windows may show a "Windows protected your 
 - `preload.js` gives the overlay page the few things it is allowed to ask for. The page is sandboxed and gets no access to Node.
 - `lib/overlayWindow.cjs` makes the window see-through, always on top, and never focused.
 - `lib/trayMenu.cjs` builds the tray menu as plain data.
+- `scripts/ensure-site.mjs` rebuilds the site when the skins, settings or code have changed since the last build (it compares a fingerprint, saved as `site/.built-from`).
 - `lib/staticServer.cjs` serves the site to the app's own windows, on this computer only.
 - The overlay page itself is `app/overlay/page.js` in the main project. It is the same figure, skins and Look Studio as the website.
 - Memory and program reading is `helper/lib.cjs`, shared with the helper, so there is one copy.
-- `npm test` here runs the desktop tests (19 of them). A self-check that needs no screen: `MM_SMOKE=1 MM_SMOKE_OUT=check.png npm start`.
+- `npm test` here runs the desktop tests (25 of them). A self-check that needs no screen: `MM_SMOKE=1 MM_SMOKE_OUT=check.png npm start`.
 
 ## What it does not do yet
 

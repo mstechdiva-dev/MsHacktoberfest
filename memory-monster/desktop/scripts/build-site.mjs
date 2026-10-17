@@ -3,6 +3,7 @@
 import { execSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
+import stamp from "./siteStamp.cjs";
 
 const here = import.meta.dirname;
 const root = path.resolve(here, "..", "..");
@@ -21,4 +22,6 @@ fs.rmSync(site, { recursive: true, force: true });
 fs.cpSync(path.join(root, "out"), site, { recursive: true });
 // The landing page video is for the web, not for the app.
 fs.rmSync(path.join(site, "memory-monster-short.mp4"), { force: true });
+// Remember what this build came from, so ensure-site.mjs can tell when the code has changed.
+fs.writeFileSync(path.join(site, ".built-from"), stamp.siteFingerprint(root));
 console.log(`Site copied to ${site}`);
