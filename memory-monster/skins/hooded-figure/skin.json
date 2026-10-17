@@ -1,0 +1,36 @@
+{
+  "name": "Hooded Figure",
+  "author": "Cheryl",
+  "eyes": {
+    "color": "#ff2a2a",
+    "size": 1,
+    "glow": 1,
+    "pulseSeconds": 1.2,
+    "flicker": true
+  },
+  "outfit": {
+    "style": "hood",
+    "hood": "#0a0a0e",
+    "coat": "#050507"
+  },
+  "face": {
+    "style": "void"
+  },
+  "door": {
+    "style": "wood",
+    "glow": "#ff0000",
+    "opens": "swing"
+  },
+  "mood": {
+    "darkness": 0.75,
+    "tint": "#280000"
+  },
+  "entrance": {
+    "style": "walk-out"
+  },
+  "words": {
+    "arrive": "You are running all of this at once.",
+    "reminder": "Still crowded. Close a few and I will go back to the dark.",
+    "leave": "Better. Back to the dark."
+  }
+}

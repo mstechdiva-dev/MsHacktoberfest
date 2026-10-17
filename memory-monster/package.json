@@ -1,0 +1,22 @@
+{
+  "name": "memory-monster",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A door opens and a dark figure steps out when your computer's memory gets too full. Runs from Vercel.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "node --test --test-reporter=spec \"tests/*.test.js\"",
+    "check-skins": "node scripts/check-skins.js"
+  },
+  "dependencies": {
+    "next": "^15.5.27",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

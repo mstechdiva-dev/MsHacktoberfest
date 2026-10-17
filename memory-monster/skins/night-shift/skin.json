@@ -1,0 +1,37 @@
+{
+  "name": "Night Shift",
+  "author": "Memory Monster",
+  "eyes": {
+    "color": "#c084fc",
+    "size": 1,
+    "glow": 1,
+    "pulseSeconds": 1.4,
+    "flicker": false
+  },
+  "outfit": {
+    "style": "hoodie",
+    "hood": "#1e1b4b",
+    "coat": "#111827",
+    "accent": "#1e3a8a"
+  },
+  "face": {
+    "style": "grin"
+  },
+  "door": {
+    "style": "wood",
+    "glow": "#c084fc",
+    "opens": "swing"
+  },
+  "mood": {
+    "darkness": 0.8,
+    "tint": "#1e1b4b"
+  },
+  "entrance": {
+    "style": "walk-out"
+  },
+  "words": {
+    "arrive": "Long day? You have a lot open.",
+    "reminder": "Close a few and I will let you rest.",
+    "leave": "Rest well."
+  }
+}

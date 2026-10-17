@@ -1,0 +1,9 @@
+{
+  "enterPercent": 80,
+  "leavePercent": 75,
+  "reminderMinutes": 5,
+  "snoozeMinutes": 15,
+  "autoOnHours": 8,
+  "pollSeconds": 3,
+  "skin": "hooded-figure"
+}
