@@ -8,6 +8,8 @@
   "license": "MIT",
   "scripts": {
     "build:site": "node scripts/build-site.mjs",
+    "ensure:site": "node scripts/ensure-site.mjs",
+    "prestart": "node scripts/ensure-site.mjs",
     "start": "electron .",
     "dev": "npm run build:site && electron .",
     "test": "node --test --test-reporter=spec \"tests/*.test.cjs\"",

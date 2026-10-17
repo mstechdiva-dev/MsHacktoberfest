@@ -1,6 +1,7 @@
 @echo off
 rem Starts Memory Monster for Windows. Double-click this file.
 rem The first run installs what it needs and builds the site, which takes a few minutes.
+rem After that it only rebuilds when you have changed a skin, a setting or the code.
 cd /d "%~dp0"
 
 where node >nul 2>nul
@@ -20,14 +21,12 @@ if not exist node_modules (
   )
 )
 
-if not exist site\overlay.html (
-  echo Building the site ^(first run only^)...
-  call npm run build:site
-  if errorlevel 1 (
-    echo The build did not finish. The messages above say why.
-    pause
-    exit /b 1
-  )
+rem Builds the site the first time, and again whenever your skins, settings or code have changed.
+call npm run ensure:site
+if errorlevel 1 (
+  echo The build did not finish. The messages above say why.
+  pause
+  exit /b 1
 )
 
 echo.
