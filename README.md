@@ -58,7 +58,7 @@ npm test
 **Good first changes.**
 
 - **A new skin.** One small `skin.json` file in `community-skins/`. Copy `skins/_template`, or press Copy as skin.json in the Look Studio. [How to make one](memory-monster/MAKE-YOUR-OWN-FIGURE.md).
-- **A new face, outfit, door or entrance.** Add it to `lib/skinOptions.js` and give it a style rule in `app/globals.css`. The tests fail if a look has no style rule.
+- **A new face, outfit, door or entrance.** Add it to `lib/skinOptions.js`. Faces, doors and entrances get a style rule in `app/globals.css`; outfits are drawn in `components/FigureArt.js`. The tests fail if a look has no style rule or drawing.
 - **Docs and accessibility fixes.**
 - A Mac or Linux version would be its own game, not a port, because those systems handle memory differently. Open an issue first so we can talk about the design.
 

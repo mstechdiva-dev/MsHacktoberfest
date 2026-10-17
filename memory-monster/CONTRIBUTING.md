@@ -29,7 +29,7 @@ The rules everyone keeps:
 - Real readings only. The only made-up numbers are the ones labelled as sample data during **Test the figure**.
 - The helper stays on `127.0.0.1`, keeps the code check, and keeps its list of protected system programs.
 
-Adding a new face, outfit, door or entrance takes three things: add it to the list in `lib/skinOptions.js`, give it a style rule in `app/globals.css`, and look at its thumbnail in the Look Studio. `npm test` fails if a look is in the list without a style rule.
+Adding a new face, outfit, door or entrance takes three things: add it to the list in `lib/skinOptions.js`, give it its look (a style rule in `app/globals.css` for a face, door or entrance, or a drawing in `components/FigureArt.js` for an outfit), and look at its thumbnail in the Look Studio. `npm test` fails if a look is in the list without a style rule or drawing.
 
 Keep each pull request to one change and say how you tested it. Run `npm test` before you open it.
 

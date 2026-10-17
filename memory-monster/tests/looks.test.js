@@ -6,6 +6,7 @@ import { applyLook, skinToJson } from "../lib/looks.js";
 import { FACES, OUTFITS, DOORS, OPENS, ENTRANCES, ids } from "../lib/skinOptions.js";
 
 const css = fs.readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
+const art = fs.readFileSync(new URL("../components/FigureArt.js", import.meta.url), "utf8");
 
 test("an empty look leaves the skin alone", () => {
   assert.deepEqual(applyLook(DEFAULT_SKIN, {}).skin, DEFAULT_SKIN);
@@ -43,15 +44,18 @@ test("every look in the picker passes the skin checker", () => {
   for (const e of ids(ENTRANCES)) assert.deepEqual(applyLook(DEFAULT_SKIN, { entrance: { style: e } }).problems, [], e);
 });
 
-test("every look in the picker has a rule in the stylesheet (the default look needs none)", () => {
+test("every face, door and entrance in the picker has a rule in the stylesheet (the default look needs none)", () => {
   const need = [
     ...ids(FACES).filter((i) => i !== "void").map((i) => `data-face="${i}"`),
-    ...ids(OUTFITS).filter((i) => i !== "hood").map((i) => `data-outfit="${i}"`),
     ...ids(DOORS).filter((i) => i !== "wood").map((i) => `data-door="${i}"`),
     ...ids(OPENS).filter((i) => i !== "swing").map((i) => `data-opens="${i}"`),
     ...ids(ENTRANCES).filter((i) => i !== "walk-out").map((i) => `data-entrance="${i}"`),
   ];
   for (const rule of need) assert.ok(css.includes(rule), `no style rule for ${rule}`);
+});
+
+test("every outfit in the picker is drawn in components/FigureArt.js (the hood outfit is the default drawing)", () => {
+  for (const id of ids(OUTFITS).filter((i) => i !== "hood")) assert.ok(art.includes(`"${id}"`), `no drawing for the ${id} outfit`);
 });
 
 test("the copied skin.json is a complete skin that passes the checker", () => {

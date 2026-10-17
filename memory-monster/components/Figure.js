@@ -1,3 +1,5 @@
+import { BackArt, FrontArt } from "./FigureArt";
+
 // The door and the figure, drawn from a skin. Used by the main scene and by every thumbnail,
 // so a thumbnail always shows exactly what the real scene will show.
 
@@ -34,24 +36,15 @@ export function Door({ skin }) {
 
 export function Figure({ skin }) {
   const outfit = skin.outfit.style;
-  const hat = outfit === "trench" || outfit === "tophat";
   return (
     <div className="figure" data-entrance={skin.entrance.style} data-outfit={outfit} data-face={skin.face.style}>
       <div className="fbody">
-        {outfit === "hoodie" ? <div className="legs" /> : null}
-        <div className="coat" />
-        <div className="sleeve l" />
-        <div className="sleeve r" />
+        <BackArt outfit={outfit} />
         <div className="hood">
           {skin.face.style === "redhead" ? <div className="hair" /> : null}
           <div className="face" data-face={skin.face.style} />
-          {hat ? (
-            <div className="hat">
-              <i className="crown" />
-              <i className="brim" />
-            </div>
-          ) : null}
         </div>
+        <FrontArt outfit={outfit} />
         <div className={`reye l${skin.eyes.flicker ? " flick" : ""}`} />
         <div className={`reye r${skin.eyes.flicker ? " flick" : ""}`} />
       </div>
