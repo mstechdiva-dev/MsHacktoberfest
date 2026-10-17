@@ -70,6 +70,12 @@ export default function Landing({ defaults, looks, hasVideo }) {
         </ul>
       </section>
 
+      <section className="lsec" aria-labelledby="desktop">
+        <h2 id="desktop">On your desktop</h2>
+        <p className="lead">A web page lives inside its browser window. The Windows desktop app goes further: the screen darkens, the door opens in the corner, and he steps out over whatever you were doing. The mouse goes straight through to your work, and only the card takes clicks. It reads your memory itself, so it needs no helper and no account.</p>
+        <p className="lead">It is in the <code>desktop/</code> folder, and its README explains how to run it and build the installer.</p>
+      </section>
+
       <section className="lsec" aria-labelledby="yours">
         <h2 id="yours">Make him yours</h2>
         <p className="lead">Every choice is a picture of the real figure, so you see it before you pick it.</p>

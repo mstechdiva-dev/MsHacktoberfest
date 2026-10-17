@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { initialState, step, pause, clearPause } from "../lib/stateMachine.js";
 import { resolveSettings } from "../lib/settings.js";
 import { pickSkin } from "../lib/skins.js";
@@ -32,6 +33,9 @@ export default function MonsterApp({ defaults, skins }) {
   const [asking, setAsking] = useState("");
   const [panelOpen, setPanelOpen] = useState(false);
   const [now, setNow] = useState(0);
+  const [notify, setNotify] = useState(false);
+  const [canPip, setCanPip] = useState(false);
+  const [pip, setPip] = useState(null);
 
   const raw = useMemo(() => ({ ...defaults, ...overrides }), [defaults, overrides]);
   const { settings, problems: settingProblems } = useMemo(() => resolveSettings(raw, defaults), [raw, defaults]);
@@ -47,11 +51,13 @@ export default function MonsterApp({ defaults, skins }) {
     setSource(loadJson("mm-source", "demo"));
     setHelper((h) => ({ ...h, ...loadJson("mm-helper", {}) }));
     setMachine((m) => ({ ...m, ...loadJson("mm-pause", {}) }));
+    setNotify(loadJson("mm-notify", false) === true);
+    setCanPip(typeof window !== "undefined" && "documentPictureInPicture" in window);
     setNow(Date.now());
   }, []);
 
   const live = useRef({});
-  live.current = { settings, skin, source, demoPercent, helperReading, testUntil };
+  live.current = { settings, skin, source, demoPercent, helperReading, testUntil, notify };
   const machineRef = useRef(machine);
   machineRef.current = machine;
 
@@ -72,7 +78,13 @@ export default function MonsterApp({ defaults, skins }) {
         setMachine(state);
       }
       for (const e of events) {
-        if (e === "arrive") setMessage(c.skin.words.arrive);
+        if (e === "arrive") {
+          setMessage(c.skin.words.arrive);
+          // A hidden tab cannot show him, so say so with a notification (only if the person turned it on).
+          if (c.notify && document.hidden && typeof Notification !== "undefined" && Notification.permission === "granted") {
+            try { new Notification("Memory Monster", { body: c.skin.words.arrive }); } catch { /* notifications blocked */ }
+          }
+        }
         if (e === "reminder") {
           setMessage(c.skin.words.reminder);
           setPulse((n) => n + 1);
@@ -115,6 +127,45 @@ export default function MonsterApp({ defaults, skins }) {
     setTestUntil(Date.now() + TEST_MS);
   };
   const onFullscreen = () => document.documentElement.requestFullscreen?.();
+
+  // Turning notifications on asks the browser for permission; it stays off if the answer is no.
+  const changeNotify = async (on) => {
+    if (on && typeof Notification !== "undefined" && Notification.permission !== "granted") {
+      const answer = await Notification.requestPermission();
+      if (answer !== "granted") {
+        setNote("Notifications are blocked for this site. Allow them in your browser's site settings, then try again.");
+        return;
+      }
+    }
+    setNotify(on);
+    saveJson("mm-notify", on);
+  };
+
+  // A small always-on-top window that holds the scene (Chrome and Edge only).
+  const popOut = async () => {
+    try {
+      const win = await window.documentPictureInPicture.requestWindow({ width: 480, height: 420 });
+      for (const sheet of [...document.styleSheets]) {
+        try {
+          const st = win.document.createElement("style");
+          st.textContent = [...sheet.cssRules].map((r) => r.cssText).join("\n");
+          win.document.head.appendChild(st);
+        } catch {
+          if (sheet.href) {
+            const l = win.document.createElement("link");
+            l.rel = "stylesheet";
+            l.href = sheet.href;
+            win.document.head.appendChild(l);
+          }
+        }
+      }
+      win.document.body.className = "pip";
+      win.addEventListener("pagehide", () => setPip(null));
+      setPip(win);
+    } catch {
+      setNote("This browser would not open the pop-out window.");
+    }
+  };
 
   const changeSetting = (key, value) => {
     const next = { ...overrides, [key]: value };
@@ -175,11 +226,21 @@ export default function MonsterApp({ defaults, skins }) {
           <button type="button" onClick={onSnooze}>Snooze {settings.snoozeMinutes} min</button>
           {paused ? <button type="button" onClick={onBackOn}>Turn back on</button> : <button type="button" onClick={onOff}>Turn off ({settings.autoOnHours} h)</button>}
           <button type="button" onClick={onFullscreen}>Full screen</button>
+          {canPip ? <button type="button" onClick={popOut}>Pop out</button> : null}
           <a className="linkbtn" href="/looks">Look Studio</a>
           <button type="button" onClick={() => setPanelOpen(true)}>Settings</button>
         </div>
         {skinProblems.length > 0 ? <p className="tiny">Skin note: {skinProblems[0]}</p> : null}
       </section>
+
+      {pip
+        ? createPortal(
+            <Stage phase={machine.phase} skin={skin} contained>
+              <AlertCard show={showCard} message={message} top={top} sample={testing} canClose={source === "helper"} note={note} pulse={pulse % 2 === 1} asking={asking} onAsk={setAsking} onConfirm={onConfirm} onCancel={() => setAsking("")} />
+            </Stage>,
+            pip.document.body
+          )
+        : null}
 
       <SettingsPanel
         open={panelOpen}
@@ -193,6 +254,8 @@ export default function MonsterApp({ defaults, skins }) {
         helper={helper}
         onHelper={changeHelper}
         onChange={changeSetting}
+        notify={notify}
+        onNotify={changeNotify}
         onReset={() => {
           setOverrides({});
           saveJson("mm-settings", {});

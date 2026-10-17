@@ -6,10 +6,8 @@ const os = require("os");
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
-const { execFile } = require("child_process");
-const { memoryPercent, topPrograms, findClosable, parseWindows, parsePs } = require("./lib.cjs");
+const { readNow, closeProgramByName } = require("./lib.cjs");
 
-const IS_WIN = process.platform === "win32";
 const CONFIG_PATH = path.join(__dirname, "helper.config.json");
 const TOKEN_PATH = path.join(os.homedir(), ".memory-monster-token");
 
@@ -33,28 +31,6 @@ function loadToken() {
   const t = crypto.randomBytes(16).toString("hex");
   fs.writeFileSync(TOKEN_PATH, t + "\n", { mode: 0o600 });
   return t;
-}
-
-function run(cmd, args) {
-  return new Promise((resolve, reject) => {
-    execFile(cmd, args, { timeout: 8000, maxBuffer: 4 * 1024 * 1024, windowsHide: true }, (err, stdout) => (err ? reject(err) : resolve(stdout)));
-  });
-}
-
-const PS_SCRIPT =
-  "Get-Process | Group-Object ProcessName | ForEach-Object { [pscustomobject]@{ name=$_.Name; mb=[math]::Round((($_.Group | Measure-Object WorkingSet64 -Sum).Sum)/1MB); pids=@($_.Group.Id) } } | Sort-Object mb -Descending | Select-Object -First 25 | ConvertTo-Json -Compress";
-
-async function readPrograms() {
-  const rows = IS_WIN
-    ? parseWindows(await run("powershell.exe", ["-NoProfile", "-NonInteractive", "-Command", PS_SCRIPT]))
-    : parsePs(await run("ps", ["-eo", "pid=,rss=,comm=", "--sort=-rss"]));
-  return topPrograms(rows, 5);
-}
-
-// Asks the program to close. No force flag, so programs get the chance to ask about unsaved work.
-async function closePid(pid) {
-  if (IS_WIN) await run("taskkill", ["/PID", String(pid)]);
-  else process.kill(pid, "SIGTERM");
 }
 
 function startServer() {
@@ -93,8 +69,7 @@ function startServer() {
 
     try {
       if (req.method === "GET" && req.url === "/memory") {
-        const top = await readPrograms();
-        return send(res, 200, { percent: memoryPercent(os.totalmem(), os.freemem()), top, at: Date.now() }, cors);
+        return send(res, 200, await readNow(), cors);
       }
       if (req.method === "POST" && req.url === "/close") {
         let body = "";
@@ -103,18 +78,8 @@ function startServer() {
           if (body.length > 2000) return send(res, 413, { ok: false, error: "Too large." }, cors);
         }
         const { name } = JSON.parse(body || "{}");
-        const hit = findClosable(await readPrograms(), name);
-        if (!hit) return send(res, 404, { ok: false, error: "That program is not on the list." }, cors);
-        let closed = 0;
-        for (const pid of hit.pids.slice(0, 50)) {
-          try {
-            await closePid(pid);
-            closed += 1;
-          } catch {
-            // One window refusing is fine; the count below tells the page what happened.
-          }
-        }
-        return send(res, 200, { ok: closed > 0, closed, total: hit.pids.length }, cors);
+        const r = await closeProgramByName(name);
+        return send(res, r.ok || !r.error ? 200 : 404, r, cors);
       }
       return send(res, 404, { error: "Not found." }, cors);
     } catch (e) {

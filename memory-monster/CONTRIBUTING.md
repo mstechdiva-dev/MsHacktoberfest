@@ -27,6 +27,7 @@ The rules everyone keeps:
 - Snooze and Turn off always work, even while he is on screen.
 - No accounts, no analytics, no server of our own.
 - Real readings only. The only made-up numbers are the ones labelled as sample data during **Test the figure**.
+- The desktop app (`desktop/`) never uses the network except to its own `127.0.0.1` page server, keeps the overlay click-through everywhere except the card, and checks that every message to the main process comes from the overlay.
 - The helper stays on `127.0.0.1`, keeps the code check, and keeps its list of protected system programs.
 
 Adding a new face, outfit, door or entrance takes three things: add it to the list in `lib/skinOptions.js`, give it its look (a style rule in `app/globals.css` for a face, door or entrance, or a drawing in `components/FigureArt.js` for an outfit), and look at its thumbnail in the Look Studio. `npm test` fails if a look is in the list without a style rule or drawing.

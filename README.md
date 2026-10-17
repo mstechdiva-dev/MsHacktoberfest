@@ -41,7 +41,8 @@ Memory Monster watches how much memory your computer is using. At 80% or more th
 
 You can change how he looks. Faces (including a redhead and a green alien), outfits, doors and ways of arriving are all choices you can see as pictures in the Look Studio. Shadow Form is the default look, and five more ship with it: Hooded Figure, Green Visitor, Detective, Ghost and Night Shift.
 
-- Not online yet. It is set up to deploy from its own folder (see [Putting a project online](#putting-a-project-online)).
+- Two versions: a website, and a **Windows desktop app** that draws over your whole screen (see [`memory-monster/desktop/`](memory-monster/desktop/README.md)).
+- The website is not online yet. It is set up to deploy from its own folder (see [Putting a project online](#putting-a-project-online)).
 - [Short video](memory-monster/public/memory-monster-short.mp4) (1 minute 49 seconds) and the [long walkthrough](memory-monster/docs/memory-monster-walkthrough.mp4) (4 minutes 27 seconds)
 - [Read the Memory Monster README](memory-monster/README.md) and its [contributing guide](memory-monster/CONTRIBUTING.md)
 
@@ -53,6 +54,11 @@ npm install
 npm run dev          # http://localhost:3000
 npm run check-skins  # names the exact field if a skin has a mistake
 npm test
+
+# the Windows desktop app
+cd desktop
+npm install
+npm run dev          # a tray icon, and him over your screen when memory runs high
 ```
 
 **Good first changes.**

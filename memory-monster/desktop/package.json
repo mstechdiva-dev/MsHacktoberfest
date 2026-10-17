@@ -1,0 +1,33 @@
+{
+  "name": "memory-monster-desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Memory Monster for Windows: a door opens over your screen and a dark figure steps out when your memory gets too full.",
+  "main": "main.js",
+  "author": "XYZ Agents LLC",
+  "license": "MIT",
+  "scripts": {
+    "build:site": "node scripts/build-site.mjs",
+    "start": "electron .",
+    "dev": "npm run build:site && electron .",
+    "test": "node --test --test-reporter=spec \"tests/*.test.cjs\"",
+    "dist": "npm run build:site && electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^44.9.0",
+    "electron-builder": "^26.15.3"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "build": {
+    "appId": "com.xyzagents.memorymonster",
+    "productName": "Memory Monster",
+    "copyright": "Copyright (c) 2026 XYZ Agents LLC",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "preload.js", "lib/**", "site/**", "assets/**", "package.json"],
+    "extraResources": [{ "from": "../helper/lib.cjs", "to": "helper-lib.cjs" }],
+    "win": { "target": "nsis", "icon": "assets/icon.png" },
+    "nsis": { "oneClick": true, "perMachine": false }
+  }
+}

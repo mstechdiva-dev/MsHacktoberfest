@@ -27,7 +27,12 @@ Memory Monster watches how much memory is in use.
 
 The gap between 80 and 75 is on purpose. Without it he would pop in and out every time your memory hovers around one number.
 
-## How it runs
+## Two ways to run it
+
+- **The website** (this folder, deployed to Vercel). It lives in a browser window. See below.
+- **The Windows desktop app** (`desktop/`). It draws over your whole screen, on top of other programs, with the mouse passing straight through. It reads your memory itself, so it needs no helper and no Vercel. See [`desktop/README.md`](desktop/README.md).
+
+## How the website runs
 
 Memory Monster is a website. You deploy it to Vercel and open it in a browser. There is no server code and no database: the whole site is static files.
 
@@ -41,7 +46,7 @@ A website can't see how full your computer is, so the page gets its number from 
 
 The helper is a small program that runs on your own computer. See `helper/README.md`. It listens only on `127.0.0.1`, so nothing outside your computer can reach it, and it needs a code that only your browser knows.
 
-A website also can't draw over your desktop. Open the page in its own window, or press **Full screen**, and leave it on a second monitor or a spare corner of the screen. Without the helper, the figure reacts to the slider or to the tab; with the helper he reacts to your real memory.
+A website also can't draw over your desktop. Open the page in its own window, press **Full screen**, or press **Pop out** for a small always-on-top window (Chrome and Edge), and leave it where you can see it. You can also turn on a notification in Settings, so a hidden tab still tells you when he arrives. For the real thing, over your whole screen, use the desktop app. Without the helper, the figure reacts to the slider or to the tab; with the helper he reacts to your real memory.
 
 ## Put it on Vercel
 
@@ -73,8 +78,9 @@ Press **Test the figure**. It plays the whole sequence once with a pretend 85% a
 | Snooze 15 min | Sends him away and holds him back for 15 minutes. |
 | Turn off (8 h) | Stops watching. It turns itself back on after 8 hours so you don't forget it is off. |
 | Full screen | Fills the screen with the scene. |
+| Pop out | Opens a small always-on-top window with the scene (Chrome and Edge only). |
 | Look Studio | Pick his face, outfit, door and eyes from thumbnails. |
-| Settings | Source, figure, and the numbers below. |
+| Settings | Source, figure, notifications, and the numbers below. |
 
 Snooze and Turn off work at any time, even while he is on screen.
 

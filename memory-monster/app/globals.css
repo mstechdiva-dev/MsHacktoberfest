@@ -226,3 +226,21 @@ body:has(.landing) { overflow-y: auto; }
 .landing code { background: #0d1117; border: 1px solid #334155; border-radius: 6px; padding: 1px 6px; font-size: 13px; }
 .lfoot { border-top: 1px solid var(--border); padding-top: 18px; font-size: 13px; color: var(--soft); line-height: 1.7; }
 .lfoot a { color: #cbd5e1; }
+
+/* ---------- Desktop overlay: a see-through scene over the whole screen ---------- */
+html:has(.stage.overlay), body:has(.stage.overlay) { background: transparent; }
+.stage.overlay { background: transparent; pointer-events: none; }
+.stage.overlay .dim { background: radial-gradient(ellipse at 72% 76%, color-mix(in srgb, var(--tint) 30%, transparent), rgba(0,0,0,calc(var(--dark) * .72))); }
+.stage.overlay .door-wrap, .stage.overlay .figure { bottom: 52px; zoom: 1.7; }
+.stage.overlay .fog { bottom: 30px; height: 220px; }
+.overlay-note { max-width: 560px; margin: 12vh auto; padding: 0 20px; line-height: 1.6; }
+.overlay-note h1 { font-size: 22px; margin-bottom: 10px; }
+.overlay-note p { color: #cbd5e1; margin-bottom: 14px; }
+
+.check { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 14px; font-size: 14px; line-height: 1.4; }
+.check input { width: 22px; height: 22px; margin-top: 1px; flex: none; }
+
+/* inside the pop-out window */
+body.pip { margin: 0; overflow: hidden; background: #0b1120; }
+.pip .stage.contained { position: relative; width: 100vw; height: 100vh; border: 0; border-radius: 0; }
+.pip .card { width: calc(100% - 24px); left: 12px; top: 10px; }

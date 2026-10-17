@@ -1,7 +1,7 @@
 "use client";
 
 // Settings are kept in this browser only. settings.json holds the defaults for everyone.
-export default function SettingsPanel({ open, onClose, values, defaults, skins, problems, source, onSource, helper, onHelper, onChange, onReset }) {
+export default function SettingsPanel({ open, onClose, values, defaults, skins, problems, source, onSource, helper, onHelper, onChange, onReset, notify, onNotify }) {
   if (!open) return null;
   const num = (key, label, hint) => (
     <label className="field" key={key}>
@@ -45,6 +45,11 @@ export default function SettingsPanel({ open, onClose, values, defaults, skins, 
           </label>
         </>
       ) : null}
+
+      <label className="check">
+        <input type="checkbox" checked={!!notify} onChange={(e) => onNotify(e.target.checked)} />
+        <span>Send me a notification when he arrives, even if this tab is hidden</span>
+      </label>
 
       <label className="field">
         <span>Figure</span>
