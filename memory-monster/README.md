@@ -49,6 +49,16 @@ A website also can't draw over your desktop. Open the page in its own window, or
 
 That is the whole deploy. There are no environment variables to set.
 
+### If this folder lives inside a bigger repo
+
+A repo can be imported into Vercel more than once, so another project in the same repo keeps running untouched. Do the same steps, with these changes:
+
+1. After you pick the repo, find **Root Directory**, press **Edit**, and choose the `memory-monster` folder. Give the project its own name.
+2. In the new project's settings, add an **Ignored Build Step** so it skips builds when nothing in `memory-monster/` changed. Without it, every push to the repo rebuilds every project connected to it.
+3. To deploy before a branch is merged, set the project's **Production Branch** to that branch.
+
+This folder imports nothing from outside itself, so the Root Directory setting is all it needs.
+
 ## Try it without filling your memory
 
 Press **Test the figure**. It plays the whole sequence once with a pretend 85% and a short list of sample programs (labelled as samples on the card), then lets him leave.
