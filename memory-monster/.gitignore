@@ -1,0 +1,9 @@
+node_modules/
+.next/
+.vercel/
+out/
+desktop/node_modules/
+desktop/site/
+desktop/dist/
+helper/helper.config.json
+*.log

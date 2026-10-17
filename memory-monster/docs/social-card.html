@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Memory Monster — Shadow Form</title>
+<style>
+  :root{
+    --bg-1:#08040f;
+    --bg-2:#1a0820;
+    --bg-3:#2e0e2a;
+    --bg-4:#5a1a2a;
+    --bg-5:#8a2a18;
+    --coat:#1a0f08;
+    --coat-shade:#0d0704;
+    --coat-dark:#000;
+    --hat:#000;
+    --hat-band:#6a1818;
+    --glow:#ff3018;
+    --door:#000;
+    --door-frame:#1a0a05;
+    --door-light:#ff4020;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+
+  body{
+    font-family:'Georgia','Times New Roman',serif;
+    background:#000;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    overflow-x:hidden;
+  }
+
+  .scene{
+    position:relative;
+    width:1200px;
+    height:675px;
+    background:linear-gradient(135deg,
+      var(--bg-1) 0%,
+      var(--bg-2) 30%,
+      var(--bg-3) 55%,
+      var(--bg-4) 80%,
+      var(--bg-5) 100%);
+    overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,.9);
+    border-radius:6px;
+  }
+
+  /* ---- Heavy atmospheric darkness ---- */
+  .darkness{
+    position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse at 75% 60%,
+        rgba(255,60,30,.18) 0%,
+        transparent 40%),
+      radial-gradient(ellipse at 30% 40%,
+        rgba(60,20,40,.4) 0%,
+        transparent 60%);
+    pointer-events:none;
+    z-index:7;
+  }
+
+  /* ---- Sparse, dim stars ---- */
+  .stars{
+    position:absolute;inset:0;
+    background-image:
+      radial-gradient(1px 1px at 12% 18%, rgba(255,200,180,.5), transparent),
+      radial-gradient(1px 1px at 28% 9%, rgba(255,180,150,.35), transparent),
+      radial-gradient(1px 1px at 48% 14%, rgba(255,220,200,.5), transparent),
+      radial-gradient(1px 1px at 67% 7%, rgba(200,150,150,.25), transparent),
+      radial-gradient(1px 1px at 82% 22%, rgba(255,180,160,.4), transparent),
+      radial-gradient(1px 1px at 91% 6%, rgba(255,200,180,.45), transparent);
+    opacity:.4;
+  }
+
+  /* ---- Left text panel ---- */
+  .panel{
+    position:absolute;
+    left:60px;top:0;bottom:0;
+    width:560px;
+    display:flex;flex-direction:column;
+    justify-content:center;
+    z-index:9;
+  }
+  .tag{
+    align-self:flex-start;
+    background:#8a1818;
+    color:#ffd0a0;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-weight:800;
+    letter-spacing:3px;
+    font-size:12px;
+    padding:6px 14px;
+    border-radius:2px;
+    margin-bottom:22px;
+    text-transform:uppercase;
+    box-shadow:0 0 12px rgba(255,40,20,.4);
+  }
+  .headline{
+    font-size:54px;
+    line-height:1.05;
+    font-weight:700;
+    color:#fff;
+    text-shadow:0 4px 24px rgba(0,0,0,.9),
+                0 0 30px rgba(255,40,20,.3);
+    margin-bottom:22px;
+  }
+  .headline em{
+    font-style:italic;
+    color:#ff5028;
+    text-shadow:0 0 20px rgba(255,60,30,.6);
+  }
+  .subhead{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:18px;
+    line-height:1.55;
+    color:rgba(255,215,200,.85);
+    font-weight:300;
+    margin-bottom:30px;
+    max-width:480px;
+  }
+  .footer-note{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:13px;
+    color:rgba(255,190,165,.7);
+    letter-spacing:.5px;
+    border-top:1px solid rgba(255,60,30,.25);
+    padding-top:14px;
+    max-width:380px;
+  }
+
+  /* ---- Ground ---- */
+  .ground{
+    position:absolute;
+    left:0;right:0;bottom:0;
+    height:160px;
+    background:linear-gradient(180deg,
+      rgba(10,5,5,0) 0%,
+      rgba(5,2,2,.92) 60%,
+      rgba(0,0,0,1) 100%);
+    z-index:6;
+  }
+  .ground::before{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(180deg,
+      transparent 0%,
+      rgba(255,40,20,.08) 100%);
+  }
+
+  /* ---- Door (right) ---- */
+  .door-wrap{
+    position:absolute;
+    right:80px;bottom:0;
+    width:200px;height:430px;
+    z-index:2;
+  }
+  .door-aura{
+    position:absolute;
+    inset:-50px -40px -30px -40px;
+    background:radial-gradient(ellipse at 50% 60%,
+      rgba(255,50,20,.4) 0%,
+      rgba(180,30,10,.2) 35%,
+      transparent 70%);
+    filter:blur(10px);
+  }
+  .door-frame{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, #2a1208 0%, #0a0302 100%);
+    border-radius:8px 8px 0 0;
+    box-shadow:0 0 40px rgba(255,40,20,.4),
+               inset 0 0 0 4px #000;
+  }
+  .door{
+    position:absolute;
+    top:14px;left:14px;right:14px;bottom:0;
+    background:linear-gradient(180deg,
+      #1a0805 0%,
+      #000 50%,
+      #000 100%);
+    border-radius:6px 6px 0 0;
+    border:2px solid #000;
+    overflow:hidden;
+  }
+  .door::before{
+    content:"";
+    position:absolute;inset:0;
+    background:repeating-linear-gradient(90deg,
+      rgba(40,15,8,.5) 0px,
+      rgba(40,15,8,.5) 1px,
+      transparent 1px,
+      transparent 14px);
+    opacity:.7;
+  }
+  .door-light{
+    position:absolute;
+    top:48%;left:50%;
+    transform:translate(-50%,-50%);
+    width:70%;height:55%;
+    background:radial-gradient(ellipse at center,
+      rgba(255,80,40,.6) 0%,
+      rgba(255,40,20,.3) 40%,
+      transparent 70%);
+    filter:blur(6px);
+  }
+  .door-crack{
+    position:absolute;
+    top:0;bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:3px;
+    background:linear-gradient(180deg,
+      rgba(255,120,60,0) 0%,
+      rgba(255,80,40,.7) 30%,
+      rgba(255,60,30,.9) 50%,
+      rgba(255,80,40,.7) 70%,
+      rgba(255,120,60,0) 100%);
+    box-shadow:0 0 16px rgba(255,60,30,.8),
+               0 0 30px rgba(255,40,20,.5);
+  }
+  .door-handle{
+    position:absolute;
+    right:24px;top:50%;
+    width:10px;height:10px;
+    background:radial-gradient(circle at 30% 30%, #ff8040, #6a1808);
+    border-radius:50%;
+    box-shadow:0 0 10px rgba(255,80,40,.7);
+  }
+
+  /* ---- CHARACTER — shadow figure ---- */
+  .character{
+    position:absolute;
+    left:640px;
+    bottom:0;
+    width:320px;
+    height:560px;
+    z-index:3;
+  }
+  .char-aura{
+    position:absolute;
+    left:50%;top:40%;
+    transform:translateX(-50%);
+    width:380px;height:480px;
+    background:radial-gradient(ellipse at 50% 55%,
+      rgba(255,40,20,.35) 0%,
+      rgba(180,20,10,.18) 30%,
+      rgba(80,10,5,.08) 55%,
+      transparent 75%);
+    filter:blur(14px);
+    pointer-events:none;
+  }
+
+  .char-shadow{
+    position:absolute;
+    bottom:-10px;
+    left:50%;
+    transform:translateX(-50%);
+    width:260px;height:36px;
+    background:radial-gradient(ellipse at center,
+      rgba(0,0,0,.9) 0%,
+      transparent 70%);
+    filter:blur(8px);
+  }
+
+  /* Hat (fedora) — pure black */
+  .hat{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:200px;height:80px;
+    z-index:5;
+  }
+  .hat-brim{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:200px;height:18px;
+    background:linear-gradient(180deg, #0a0503 0%, #000 100%);
+    border-radius:50%;
+    box-shadow:0 8px 20px rgba(0,0,0,.9),
+               0 0 20px rgba(255,40,20,.15);
+  }
+  .hat-crown{
+    position:absolute;
+    bottom:8px;
+    left:50%;
+    transform:translateX(-50%);
+    width:110px;height:60px;
+    background:linear-gradient(180deg, #0a0503 0%, #000 100%);
+    border-radius:14px 14px 4px 4px;
+    box-shadow:inset -8px 0 12px rgba(0,0,0,.9),
+               inset 8px 0 12px rgba(40,15,8,.4);
+  }
+  .hat-band{
+    position:absolute;
+    bottom:14px;
+    left:50%;
+    transform:translateX(-50%);
+    width:112px;height:8px;
+    background:linear-gradient(180deg, var(--hat-band) 0%, #3a0a0a 100%);
+    border-radius:2px;
+    box-shadow:0 0 8px rgba(255,40,20,.3);
+  }
+  .hat-dent{
+    position:absolute;
+    bottom:46px;
+    left:50%;
+    transform:translateX(-50%);
+    width:60px;height:8px;
+    background:radial-gradient(ellipse at center, #000 0%, transparent 80%);
+    border-radius:50%;
+  }
+
+  /* Head — barely visible in shadow */
+  .head{
+    position:absolute;
+    top:62px;
+    left:50%;
+    transform:translateX(-50%);
+    width:90px;height:108px;
+    z-index:4;
+  }
+  .neck{
+    position:absolute;
+    bottom:-14px;
+    left:50%;
+    transform:translateX(-50%);
+    width:38px;height:24px;
+    background:linear-gradient(180deg, #1a0d08 0%, #000 100%);
+    border-radius:6px 6px 4px 4px;
+    box-shadow:inset 0 -4px 6px rgba(0,0,0,.9);
+  }
+  .face{
+    position:absolute;
+    top:0;left:0;
+    width:100%;height:100%;
+    background:linear-gradient(160deg,
+      #2a1810 0%,
+      #1a0c08 50%,
+      #000 100%);
+    border-radius:46% 46% 42% 42% / 50% 50% 45% 45%;
+    box-shadow:
+      inset -10px -8px 14px rgba(0,0,0,.9),
+      inset 6px 6px 10px rgba(60,20,10,.2),
+      0 4px 12px rgba(0,0,0,.9);
+  }
+
+  /* Heavy hat shadow covering most of the face */
+  .brow-shadow{
+    position:absolute;
+    top:6px;
+    left:50%;
+    transform:translateX(-50%);
+    width:88px;height:50px;
+    background:linear-gradient(180deg,
+      rgba(0,0,0,.95) 0%,
+      rgba(0,0,0,.7) 60%,
+      transparent 100%);
+    border-radius:50%;
+    z-index:2;
+  }
+
+  /* Jaw shadow */
+  .jaw-shadow{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:70px;height:30px;
+    background:linear-gradient(0deg,
+      rgba(0,0,0,.9) 0%,
+      transparent 100%);
+    border-radius:50%;
+    z-index:2;
+  }
+
+  /* Eyes — only thing visible, glowing red */
+  .eye{
+    position:absolute;
+    top:44px;
+    width:10px;height:6px;
+    z-index:3;
+  }
+  .eye.left{left:20px;}
+  .eye.right{right:20px;}
+  .eye-glow{
+    position:absolute;
+    top:-6px;
+    left:-8px;
+    width:26px;height:18px;
+    background:radial-gradient(ellipse at center,
+      rgba(255,60,30,.9) 0%,
+      rgba(255,40,20,.5) 35%,
+      transparent 70%);
+    filter:blur(2px);
+  }
+  .eye-core{
+    position:absolute;
+    top:0;left:0;
+    width:100%;height:100%;
+    background:radial-gradient(ellipse at center,
+      #ff8040 0%,
+      #ff3018 40%,
+      #8a1810 80%,
+      #000 100%);
+    border-radius:50%;
+    box-shadow:0 0 10px #ff3018,
+               0 0 20px rgba(255,40,20,.6);
+  }
+
+  /* Faint eyebrow hint */
+  .brow{
+    position:absolute;
+    top:38px;
+    width:18px;height:2px;
+    background:rgba(40,15,8,.7);
+    border-radius:2px;
+    z-index:3;
+  }
+  .brow.left{
+    left:14px;
+    transform:rotate(-8deg);
+  }
+  .brow.right{
+    right:14px;
+    transform:rotate(8deg);
+  }
+
+  /* Nose — barely a hint */
+  .nose{
+    position:absolute;
+    top:60px;
+    left:50%;
+    transform:translateX(-50%);
+    width:8px;height:24px;
+    background:linear-gradient(180deg,
+      transparent 0%,
+      rgba(20,8,4,.6) 50%,
+      transparent 100%);
+    border-radius:50%;
+    z-index:2;
+  }
+
+  /* Mouth — sinister grin, barely visible */
+  .mouth{
+    position:absolute;
+    top:88px;
+    left:50%;
+    transform:translateX(-50%);
+    width:26px;height:6px;
+    border-bottom:1.5px solid rgba(120,30,15,.7);
+    border-radius:0 0 14px 14px;
+    z-index:3;
+    box-shadow:0 4px 6px rgba(255,40,20,.15);
+  }
+  .mouth::after{
+    content:"";
+    position:absolute;
+    bottom:-1px;
+    left:50%;
+    transform:translateX(-50%);
+    width:18px;height:3px;
+    background:radial-gradient(ellipse at center,
+      rgba(255,60,30,.4) 0%,
+      transparent 70%);
+    border-radius:50%;
+  }
+
+  /* Ears — just dark shapes */
+  .ear{
+    position:absolute;
+    top:54px;
+    width:8px;height:16px;
+    background:linear-gradient(180deg, #1a0c08 0%, #000 100%);
+    border-radius:50% 50% 50% 50%;
+    z-index:1;
+  }
+  .ear.left{left:-4px;}
+  .ear.right{right:-4px;}
+
+  /* Trench Coat — pure dark */
+  .coat{
+    position:absolute;
+    top:160px;
+    left:50%;
+    transform:translateX(-50%);
+    width:240px;height:380px;
+    z-index:3;
+  }
+  .coat-body{
+    position:absolute;
+    top:0;left:0;
+    width:100%;height:100%;
+    background:linear-gradient(160deg,
+      #1a0f08 0%,
+      #0a0503 60%,
+      #000 100%);
+    border-radius:60px 60px 8px 8px;
+    box-shadow:
+      inset -20px 0 40px rgba(0,0,0,.9),
+      inset 20px 0 25px rgba(60,20,10,.15),
+      0 10px 40px rgba(0,0,0,.9),
+      0 0 30px rgba(255,40,20,.1);
+  }
+  .coat-body::before{
+    content:"";
+    position:absolute;inset:0;
+    background:repeating-linear-gradient(90deg,
+      rgba(0,0,0,.3) 0px,
+      rgba(0,0,0,.3) 1px,
+      transparent 1px,
+      transparent 6px);
+    border-radius:60px 60px 8px 8px;
+    opacity:.7;
+  }
+
+  /* Collar */
+  .collar{
+    position:absolute;
+    top:-6px;
+    left:50%;
+    transform:translateX(-50%);
+    width:140px;height:50px;
+    z-index:4;
+  }
+  .collar-left,
+  .collar-right{
+    position:absolute;
+    top:0;
+    width:60px;height:50px;
+    background:linear-gradient(160deg, #0a0503 0%, #000 100%);
+    border-radius:8px 50% 8px 8px;
+    box-shadow:inset 0 -4px 8px rgba(0,0,0,.9);
+  }
+  .collar-left{left:0;transform:skewY(-8deg);}
+  .collar-right{right:0;transform:skewY(8deg) scaleX(-1);}
+
+  /* Lapels */
+  .lapel{
+    position:absolute;
+    top:8px;
+    width:42px;height:120px;
+    background:linear-gradient(180deg, #0a0503 0%, #000 100%);
+    z-index:4;
+  }
+  .lapel.left{left:78px;clip-path:polygon(0 0, 100% 0, 70% 100%, 0% 80%);}
+  .lapel.right{right:78px;clip-path:polygon(100% 0, 0 0, 100% 80%, 30% 100%);}
+
+  /* Shirt and tie — barely visible at neck */
+  .shirt{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:36px;height:60px;
+    background:linear-gradient(180deg, #0a0503 0%, #000 100%);
+    z-index:3;
+    border-radius:0 0 8px 8px;
+  }
+  .tie{
+    position:absolute;
+    top:8px;
+    left:50%;
+    transform:translateX(-50%);
+    width:14px;height:50px;
+    background:linear-gradient(180deg, #6a1818 0%, #2a0808 100%);
+    z-index:3;
+    clip-path:polygon(50% 0, 100% 12%, 75% 100%, 25% 100%, 0 12%);
+    box-shadow:0 0 8px rgba(255,40,20,.2);
+  }
+
+  /* Belt */
+  .belt{
+    position:absolute;
+    top:200px;
+    left:0;
+    width:100%;height:24px;
+    background:linear-gradient(180deg, #0a0503 0%, #000 100%);
+    box-shadow:inset 0 2px 4px rgba(0,0,0,.9),
+               0 2px 8px rgba(0,0,0,.9);
+    z-index:5;
+  }
+  .belt-buckle{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:22px;height:16px;
+    background:linear-gradient(180deg, #8a1818 0%, #2a0808 100%);
+    border-radius:2px;
+    box-shadow:0 0 10px rgba(255,40,20,.5);
+  }
+  .belt-buckle::after{
+    content:"";
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:6px;height:10px;
+    background:#000;
+    border-radius:1px;
+  }
+
+  .coat-opening{
+    position:absolute;
+    top:8px;
+    left:50%;
+    transform:translateX(-50%);
+    width:4px;height:200px;
+    background:linear-gradient(180deg,
+      rgba(0,0,0,.95) 0%,
+      rgba(0,0,0,.7) 100%);
+    z-index:4;
+  }
+
+  /* Buttons — dark with faint red glow */
+  .button{
+    position:absolute;
+    width:8px;height:8px;
+    background:radial-gradient(circle at 30% 30%, #3a1010, #000);
+    border-radius:50%;
+    z-index:5;
+    box-shadow:inset 0 -1px 2px rgba(0,0,0,.9),
+               0 0 4px rgba(255,40,20,.3);
+  }
+  .button.b1{top:140px;right:80px;}
+  .button.b2{top:175px;right:80px;}
+  .button.b3{top:240px;right:80px;}
+  .button.b4{top:275px;right:80px;}
+
+  /* Coat folds */
+  .coat-fold{
+    position:absolute;
+    bottom:0;
+    width:30px;height:60px;
+    background:linear-gradient(180deg,
+      transparent 0%,
+      rgba(0,0,0,.7) 100%);
+    z-index:4;
+  }
+  .coat-fold.f1{left:20px;transform:rotate(-3deg);}
+  .coat-fold.f2{left:50%;transform:translateX(-50%) rotate(0deg);width:24px;}
+  .coat-fold.f3{right:20px;transform:rotate(3deg) scaleX(-1);}
+
+  /* Hands — pale, claw-like, barely visible */
+  .hand{
+    position:absolute;
+    top:300px;
+    width:22px;height:32px;
+    background:linear-gradient(180deg, #1a0d08 0%, #000 100%);
+    border-radius:12px 12px 8px 8px;
+    z-index:4;
+    box-shadow:inset 0 -4px 6px rgba(0,0,0,.9),
+               0 2px 8px rgba(0,0,0,.9),
+               0 0 6px rgba(255,40,20,.15);
+  }
+  .hand.left{left:18px;}
+  .hand.right{right:18px;}
+  .hand::before{
+    content:"";
+    position:absolute;
+    bottom:4px;
+    left:50%;
+    transform:translateX(-50%);
+    width:18px;height:2px;
+    background:rgba(60,20,10,.6);
+    border-radius:2px;
+  }
+
+  /* Boots */
+  .boot{
+    position:absolute;
+    bottom:-6px;
+    width:42px;height:30px;
+    background:linear-gradient(180deg, #000 0%, #000 100%);
+    border-radius:14px 14px 4px 4px;
+    z-index:5;
+    box-shadow:0 4px 12px rgba(0,0,0,1);
+  }
+  .boot.left{left:80px;}
+  .boot.right{right:80px;}
+
+  /* Red fog at character's feet */
+  .fog{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:540px;height:90px;
+    background:radial-gradient(ellipse at 50% 100%,
+      rgba(255,40,20,.35) 0%,
+      rgba(180,20,10,.18) 30%,
+      transparent 70%);
+    filter:blur(14px);
+    z-index:2;
+    pointer-events:none;
+  }
+
+  /* Volumetric shadow surrounding character */
+  .char-volume{
+    position:absolute;
+    top:-20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:280px;height:600px;
+    background:radial-gradient(ellipse at 50% 40%,
+      rgba(0,0,0,.6) 0%,
+      rgba(0,0,0,.3) 40%,
+      transparent 70%);
+    filter:blur(20px);
+    z-index:2;
+    pointer-events:none;
+  }
+
+  .badge{
+    position:absolute;
+    right:20px;bottom:14px;
+    background:rgba(0,0,0,.6);
+    backdrop-filter:blur(6px);
+    color:rgba(255,80,40,.7);
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:11px;
+    letter-spacing:1px;
+    padding:6px 12px;
+    border-radius:2px;
+    border:1px solid rgba(255,40,20,.25);
+    z-index:10;
+  }
+
+  /* Heavy vignette */
+  .vignette{
+    position:absolute;inset:0;
+    background:radial-gradient(ellipse at 60% 50%,
+      transparent 25%,
+      rgba(0,0,0,.5) 70%,
+      rgba(0,0,0,.85) 100%);
+    pointer-events:none;
+    z-index:8;
+  }
+
+  /* Eye flicker animation */
+  @keyframes flicker{
+    0%,100%{opacity:1}
+    45%{opacity:.85}
+    47%{opacity:.3}
+    49%{opacity:.9}
+    72%{opacity:.7}
+    74%{opacity:1}
+  }
+  .eye-core{
+    animation:flicker 4s infinite;
+  }
+
+  /* Aura pulse */
+  @keyframes pulse{
+    0%,100%{opacity:.9;transform:translateX(-50%) scale(1)}
+    50%{opacity:1;transform:translateX(-50%) scale(1.04)}
+  }
+  .char-aura{
+    animation:pulse 5s ease-in-out infinite;
+  }
+</style>
+</head>
+<body>
+  <div class="scene">
+    <div class="stars"></div>
+
+    <!-- Door on right -->
+    <div class="door-wrap">
+      <div class="door-aura"></div>
+      <div class="door-frame">
+        <div class="door">
+          <div class="door-light"></div>
+          <div class="door-crack"></div>
+        </div>
+        <div class="door-handle"></div>
+      </div>
+    </div>
+
+    <!-- The shadow character -->
+    <div class="character">
+      <div class="char-aura"></div>
+      <div class="char-volume"></div>
+      <div class="char-shadow"></div>
+
+      <!-- Hat -->
+      <div class="hat">
+        <div class="hat-crown"></div>
+        <div class="hat-dent"></div>
+        <div class="hat-band"></div>
+        <div class="hat-brim"></div>
+      </div>
+
+      <!-- Head — barely visible -->
+      <div class="head">
+        <div class="face"></div>
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+        <div class="nose"></div>
+        <div class="brow-shadow"></div>
+        <div class="brow left"></div>
+        <div class="brow right"></div>
+        <!-- Only the eyes glow through the shadow -->
+        <div class="eye left">
+          <div class="eye-glow"></div>
+          <div class="eye-core"></div>
+        </div>
+        <div class="eye right">
+          <div class="eye-glow"></div>
+          <div class="eye-core"></div>
+        </div>
+        <div class="mouth"></div>
+        <div class="jaw-shadow"></div>
+        <div class="neck"></div>
+      </div>
+
+      <!-- Trench coat -->
+      <div class="coat">
+        <div class="coat-body"></div>
+        <div class="collar">
+          <div class="collar-left"></div>
+          <div class="collar-right"></div>
+        </div>
+        <div class="lapel left"></div>
+        <div class="lapel right"></div>
+        <div class="shirt"></div>
+        <div class="tie"></div>
+        <div class="coat-opening"></div>
+        <div class="button b1"></div>
+        <div class="button b2"></div>
+        <div class="button b3"></div>
+        <div class="button b4"></div>
+        <div class="belt">
+          <div class="belt-buckle"></div>
+        </div>
+        <div class="coat-fold f1"></div>
+        <div class="coat-fold f2"></div>
+        <div class="coat-fold f3"></div>
+        <div class="hand left"></div>
+        <div class="hand right"></div>
+        <div class="boot left"></div>
+        <div class="boot right"></div>
+      </div>
+
+      <div class="fog"></div>
+    </div>
+
+    <div class="ground"></div>
+
+    <!-- Left text panel -->
+    <div class="panel">
+      <span class="tag">Memory Monster</span>
+      <h1 class="headline">When your memory fills up, <em>he</em> makes sure you notice.</h1>
+      <p class="subhead">Pick his face. Pick his door. Make your own in one small file.</p>
+      <p class="footer-note">Open source. Built for Hacktoberfest 2026.</p>
+    </div>
+
+    <div class="vignette"></div>
+  </div>
+</body>
+</html>

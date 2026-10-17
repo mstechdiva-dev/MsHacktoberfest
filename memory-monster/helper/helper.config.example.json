@@ -1,0 +1,4 @@
+{
+  "port": 47200,
+  "allowedOrigins": ["https://your-project.vercel.app", "http://localhost:3000"]
+}

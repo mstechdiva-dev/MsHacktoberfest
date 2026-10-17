@@ -1,0 +1,37 @@
+{
+  "name": "Shadow Form",
+  "author": "Cheryl",
+  "eyes": {
+    "color": "#ff3018",
+    "size": 1,
+    "glow": 1.2,
+    "pulseSeconds": 2,
+    "flicker": true
+  },
+  "outfit": {
+    "style": "shadow",
+    "hood": "#000000",
+    "coat": "#1a0f08",
+    "accent": "#6a1818"
+  },
+  "face": {
+    "style": "shadow"
+  },
+  "door": {
+    "style": "ajar",
+    "glow": "#ff4020",
+    "opens": "swing"
+  },
+  "mood": {
+    "darkness": 0.78,
+    "tint": "#2e0e2a"
+  },
+  "entrance": {
+    "style": "walk-out"
+  },
+  "words": {
+    "arrive": "I see everything you have open.",
+    "reminder": "Still crowded. Close a few and I will go back.",
+    "leave": "Good. Back behind the door."
+  }
+}
