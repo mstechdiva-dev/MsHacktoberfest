@@ -39,7 +39,7 @@ npm test
 
 Memory Monster watches how much memory your computer is using. At 80% or more the room darkens, a door opens, and a hooded figure steps out. A card lists the programs using the most memory and asks you to close them. When memory drops below 75%, he steps back through the door.
 
-You can change how he looks. Faces (including a redhead and a green alien), outfits, doors and ways of arriving are all choices you can see as pictures in the Look Studio. Four finished looks ship with it: Green Visitor, Detective, Ghost and Night Shift.
+You can change how he looks. Faces (including a redhead and a green alien), outfits, doors and ways of arriving are all choices you can see as pictures in the Look Studio. Shadow Form is the default look, and five more ship with it: Hooded Figure, Green Visitor, Detective, Ghost and Night Shift.
 
 - Not online yet. It is set up to deploy from its own folder (see [Putting a project online](#putting-a-project-online)).
 - [Short video](memory-monster/public/memory-monster-short.mp4) (1 minute 50 seconds) and the [long walkthrough](memory-monster/docs/memory-monster-walkthrough.mp4) (4 minutes 25 seconds)

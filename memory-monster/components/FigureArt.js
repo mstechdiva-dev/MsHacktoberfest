@@ -122,6 +122,48 @@ function HoodieSleeve({ shade }) {
   );
 }
 
+// The Shadow Form coat: broad rounded shoulders, pinstripes, a big collar, a red tie, a belt with
+// a red buckle, buttons, hands at the sides and boots. Almost everything is black on purpose.
+function ShadowCoat({ shade, uid }) {
+  const d = "M12 122 C12 100 26 90 40 90 L70 90 C84 90 98 100 98 122 L103 216 L7 216 Z";
+  const sheen = `sheen${uid}`;
+  const stripe = `stripe${uid}`;
+  return (
+    <g>
+      <defs>
+        <linearGradient id={sheen} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#5a2410" stopOpacity=".35" />
+          <stop offset="1" stopColor="#000" stopOpacity=".75" />
+        </linearGradient>
+        <pattern id={stripe} width="3.4" height="8" patternUnits="userSpaceOnUse">
+          <rect width=".6" height="8" fill="#000" opacity=".45" />
+        </pattern>
+      </defs>
+      <rect x="30" y="212" width="19" height="13" rx="5" fill="#000" />
+      <rect x="61" y="212" width="19" height="13" rx="5" fill="#000" />
+      <path d={d} style={fill("--coat")} />
+      <path d={d} fill={`url(#${sheen})`} />
+      <path d={d} fill={`url(#${stripe})`} />
+      <path d={d} fill={`url(#${shade})`} />
+      <path d="M12 122 C12 100 26 90 40 90" stroke="#ff6a3c" strokeOpacity=".16" strokeWidth="1.4" fill="none" />
+      <path d="M33 90 L52 93 L50 112 L28 104 Z M77 90 L58 93 L60 112 L82 104 Z" fill="#000" />
+      <path d="M44 93 L55 142 L49 150 L38 112 Z M66 93 L55 142 L61 150 L72 112 Z" fill="#000" opacity=".9" />
+      <path d="M52 96 L58 96 L60 134 L55 143 L50 134 Z" style={fill("--accent", "#6a1818")} />
+      <path d="M55 100 L55 216" stroke="#000" strokeOpacity=".8" strokeWidth="1.3" />
+      <circle cx="63" cy="152" r="1.7" fill="#2a0c0c" />
+      <circle cx="63" cy="166" r="1.7" fill="#2a0c0c" />
+      <circle cx="63" cy="188" r="1.7" fill="#2a0c0c" />
+      <circle cx="63" cy="202" r="1.7" fill="#2a0c0c" />
+      <path d="M8 172 L102 172 L103 180 L7 180 Z" fill="#050202" />
+      <rect x="51" y="171" width="8" height="10" rx="1.5" style={fill("--accent", "#8a1818")} />
+      <rect x="54" y="173" width="2.4" height="6" fill="#000" />
+      <path d="M16 196 L22 216 L12 216 Z M55 200 L60 216 L50 216 Z M94 196 L98 216 L88 216 Z" fill="#000" opacity=".55" />
+      <rect x="1" y="178" width="10" height="17" rx="5" fill="#0b0604" />
+      <rect x="99" y="178" width="10" height="17" rx="5" fill="#0b0604" />
+    </g>
+  );
+}
+
 // The hood and the cape over the shoulders, with a deep opening where the face sits.
 function HoodBack({ open }) {
   const d = "M55 2 C70 3 86 16 90 40 C92 56 91 70 96 84 C99 92 104 98 106 104 C90 100 78 102 55 104 C32 102 20 100 4 104 C6 98 11 92 14 84 C19 70 18 56 20 40 C24 16 40 3 55 2 Z";
@@ -178,7 +220,7 @@ export function BackArt({ outfit }) {
   const shade = `shade${uid}`;
   const open = `open${uid}`;
   const hooded = outfit === "hood" || outfit === "cloak" || outfit === "hoodie";
-  const Body = { cloak: Cloak, trench: Trench, tophat: Tails, hoodie: Hoodie }[outfit] || Robe;
+  const Body = { cloak: Cloak, trench: Trench, tophat: Tails, hoodie: Hoodie, shadow: ShadowCoat }[outfit] || Robe;
   return (
     <svg className="art back" viewBox="0 0 110 225" aria-hidden="true">
       <defs>
@@ -192,8 +234,8 @@ export function BackArt({ outfit }) {
           <stop offset="1" stopColor="#000" stopOpacity="0" />
         </radialGradient>
       </defs>
-      <Body shade={shade} />
-      {outfit === "cloak" ? null : outfit === "hoodie" ? (
+      <Body shade={shade} uid={uid} />
+      {outfit === "cloak" || outfit === "shadow" ? null : outfit === "hoodie" ? (
         <>
           <HoodieSleeve shade={shade} />
           <Mirror><HoodieSleeve shade={shade} /></Mirror>
@@ -214,7 +256,7 @@ export function BackArt({ outfit }) {
 export function FrontArt({ outfit }) {
   return (
     <svg className="art front" viewBox="0 0 110 225" aria-hidden="true">
-      {outfit === "trench" ? <Fedora /> : outfit === "tophat" ? <TopHat /> : <HoodLip />}
+      {outfit === "trench" || outfit === "shadow" ? <Fedora /> : outfit === "tophat" ? <TopHat /> : <HoodLip />}
     </svg>
   );
 }

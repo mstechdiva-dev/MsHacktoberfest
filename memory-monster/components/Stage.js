@@ -11,6 +11,7 @@ export default function Stage({ phase, skin, contained, children }) {
     <div className={`stage${active ? " active" : ""}${contained ? " contained" : ""}`} style={skinVars(skin)} data-phase={phase}>
       {contained ? null : <div className="calm-note">All quiet. He only comes when memory runs high.</div>}
       <div className="dim" />
+      <div className="fog" />
       <Door skin={skin} />
       <Figure skin={skin} />
       {children}

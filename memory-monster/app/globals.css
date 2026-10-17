@@ -33,6 +33,22 @@ button:hover { background:#273449; }
 .door-wrap[data-door="portal"] .leaf { background: radial-gradient(circle, color-mix(in srgb, var(--door-glow) 60%, #000), #000 75%); border: 0; transform: none; transition: opacity 1.2s 1s; }
 .stage.active .door-wrap[data-door="portal"] .leaf { transform: none; opacity: 0.35; transition-delay: 0s; }
 
+/* the door ajar: a closed wooden door with a crack of light that widens while he is out */
+.door-wrap[data-door="ajar"] .frame { background: linear-gradient(180deg, #2a1208 0%, #0a0302 100%); border: 4px solid #000; border-radius: 8px 8px 0 0; box-shadow: 0 0 40px color-mix(in srgb, var(--door-glow) 40%, transparent); }
+.door-wrap[data-door="ajar"] .void { background: radial-gradient(ellipse at 50% 55%, color-mix(in srgb, var(--door-glow) 45%, #000) 0%, #000 70%); }
+.door-wrap[data-door="ajar"] .leaf { border: 0; transition: none; background: repeating-linear-gradient(90deg, rgba(40,15,8,.55) 0 1px, transparent 1px 14px), linear-gradient(180deg, #1a0805 0%, #000 55%); }
+.door-wrap[data-door="ajar"] .leaf::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; transform: translateX(-50%); transition: width 1.2s .3s;
+  background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--door-glow) 70%, #fff) 30%, var(--door-glow) 50%, color-mix(in srgb, var(--door-glow) 70%, #fff) 70%, transparent 100%);
+  box-shadow: 0 0 16px var(--door-glow), 0 0 30px color-mix(in srgb, var(--door-glow) 60%, transparent); }
+.door-wrap[data-door="ajar"] .leaf::after { background: radial-gradient(circle at 30% 30%, #ff8040, #6a1808); box-shadow: 0 0 10px color-mix(in srgb, var(--door-glow) 70%, transparent); }
+.stage.active .door-wrap[data-door="ajar"] .leaf { transform: none; }
+.stage.active .door-wrap[data-door="ajar"] .leaf::before { width: 8px; }
+
+/* red fog at his feet while he is out */
+.fog { position: absolute; left: 0; right: 0; bottom: 18px; height: 130px; z-index: 5; pointer-events: none; opacity: 0; transition: opacity 1.5s; filter: blur(14px);
+  background: radial-gradient(ellipse at 62% 100%, color-mix(in srgb, var(--door-glow) 45%, transparent) 0%, color-mix(in srgb, var(--door-glow) 18%, transparent) 38%, transparent 72%); }
+.stage.active .fog { opacity: 1; }
+
 /* figure */
 .figure { position: absolute; right: calc(22% + 20px); bottom: 150px; width: 110px; height: 225px; z-index: 4; opacity: 0;
   transform: translateX(40px) scale(.7); transform-origin: bottom center; transition: transform 1.4s ease-in, opacity 1s; }
@@ -56,9 +72,16 @@ button:hover { background:#273449; }
 .face[data-face="redhead"] { background: var(--face, #f2c9a5); box-shadow: inset 0 -8px 10px rgba(120,53,15,.35); z-index: 1; }
 .face[data-face="redhead"]::before { content: ""; position: absolute; left: -3px; right: -3px; top: -6px; height: 22px; border-radius: 50% 50% 30% 30%; background: var(--hair, #b7410e); }
 .hair { position: absolute; left: 2px; top: 4px; width: 66px; height: 84px; border-radius: 50% 50% 42% 42%; background: var(--hair, #b7410e); box-shadow: inset 0 -8px 12px rgba(0,0,0,.35); }
+.face[data-face="shadow"] { background: linear-gradient(160deg, #2a1810 0%, #1a0c08 50%, #000 100%); box-shadow: inset -8px -6px 12px rgba(0,0,0,.9), inset 4px 4px 8px rgba(60,20,10,.2), 0 3px 8px rgba(0,0,0,.9); }
+/* the hat's shadow falls over the brow, and the grin is only just there */
+.face[data-face="shadow"]::before { content: ""; position: absolute; left: 50%; top: 3px; width: 96%; height: 52%; transform: translateX(-50%); background: linear-gradient(180deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.7) 60%, transparent 100%); border-radius: 50%; }
+.face[data-face="shadow"]::after { content: ""; position: absolute; left: 50%; bottom: 13px; width: 24px; height: 5px; transform: translateX(-50%); border-bottom: 1.4px solid rgba(150,35,18,.75); border-radius: 0 0 14px 14px; box-shadow: 0 3px 5px rgba(255,40,20,.18); }
+.shear { position: absolute; top: 42px; width: 5px; height: 11px; border-radius: 50%; background: linear-gradient(180deg, #1a0c08, #000); }
+.shear.l { left: 6px; } .shear.r { left: 59px; }
+.shnose { position: absolute; left: 32px; top: 46px; width: 6px; height: 15px; border-radius: 50%; background: linear-gradient(180deg, transparent 0%, rgba(20,8,4,.6) 50%, transparent 100%); }
 .face[data-face="alien"] { left: 6px; top: 10px; width: 58px; height: 70px; border-radius: 50% 50% 46% 46% / 38% 38% 62% 62%; background: var(--face, #7ed957); box-shadow: inset 0 -10px 14px rgba(0,70,0,.5); }
 .face[data-face="grin"]::after { content: ""; position: absolute; left: 10px; right: 10px; bottom: 10px; height: 14px; border-bottom: 3px solid var(--eye); border-radius: 0 0 50% 50%; box-shadow: 0 6px 10px -4px var(--eye); }
-.reye { position: absolute; top: 42px; width: calc(14px * var(--eye-scale)); height: calc(5px * var(--eye-scale)); border-radius: 50%; background: var(--eye); z-index: 4;
+.reye { position: absolute; top: 42px; width: calc(14px * var(--eye-scale)); height: calc(5px * var(--eye-scale)); border-radius: 50%; background: radial-gradient(ellipse at center, color-mix(in srgb, var(--eye) 45%, #fff) 0%, var(--eye) 42%, color-mix(in srgb, var(--eye) 35%, #000) 100%); z-index: 4;
   box-shadow: 0 0 calc(10px * var(--eye-glow)) calc(4px * var(--eye-glow)) var(--eye), 0 0 calc(28px * var(--eye-glow)) calc(10px * var(--eye-glow)) color-mix(in srgb, var(--eye) 70%, transparent);
   animation: eyeflare var(--eye-pulse) infinite alternate; }
 .reye.flick { animation: eyeflare var(--eye-pulse) infinite alternate, eyeflick 3s infinite; }
@@ -144,6 +167,7 @@ body:has(.studio) { overflow-y: auto; }
 .thumb .figure, .thumb .door-wrap { position: absolute; right: auto; bottom: auto; left: 0; top: 0; opacity: 1; transform: none; transition: none; }
 .thumb .door-wrap { left: 0; top: 0; }
 .thumb .figure .fbody { animation: none; }
+.thumb .fog { display: none; }
 .thumb .leaf { transition: none; transform: perspective(500px) rotateY(-55deg); }
 .thumb .door-wrap[data-opens="slide"] .leaf { transform: translateX(55%); }
 .thumb .door-wrap[data-door="portal"] .leaf { transform: none; opacity: .35; }

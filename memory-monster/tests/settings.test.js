@@ -30,6 +30,6 @@ test("leave at or above enter resets both so he cannot flicker", () => {
 });
 
 test("garbage input does not throw", () => {
-  assert.equal(resolveSettings(null, defaults).settings.skin, "hooded-figure");
+  assert.equal(resolveSettings(null, defaults).settings.skin, defaults.skin);
   assert.equal(resolveSettings("nope", defaults).settings.enterPercent, 80);
 });

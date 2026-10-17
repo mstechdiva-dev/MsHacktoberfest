@@ -8,6 +8,7 @@ export const FACES = [
   { id: "grin", label: "Glowing grin" },
   { id: "redhead", label: "Redhead" },
   { id: "alien", label: "Green alien" },
+  { id: "shadow", label: "Shadow face" },
 ];
 
 export const OUTFITS = [
@@ -16,6 +17,7 @@ export const OUTFITS = [
   { id: "trench", label: "Trench coat and hat" },
   { id: "tophat", label: "Top hat and tails" },
   { id: "hoodie", label: "Hoodie and jeans" },
+  { id: "shadow", label: "Shadow trench coat" },
 ];
 
 export const DOORS = [
@@ -23,6 +25,7 @@ export const DOORS = [
   { id: "metal", label: "Metal door" },
   { id: "curtain", label: "Stage curtain" },
   { id: "portal", label: "Portal" },
+  { id: "ajar", label: "Door ajar" },
 ];
 
 export const OPENS = [

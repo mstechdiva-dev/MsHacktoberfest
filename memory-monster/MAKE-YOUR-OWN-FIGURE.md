@@ -8,9 +8,9 @@ If you can edit a text file, you can make a skin.
 
 Open the site and press **Look Studio** (or go to `/looks`). Every choice has a small picture of the real figure and the real door, so you see what you get before you pick it.
 
-- **Face:** black void, skull, pale mask, glowing grin, redhead, green alien
-- **Outfit:** hood and long coat, cloak, trench coat and hat, top hat and tails, hoodie and jeans
-- **Door:** wooden, metal, stage curtain, portal. And whether it swings or slides open.
+- **Face:** black void, skull, pale mask, glowing grin, redhead, green alien, shadow face
+- **Outfit:** hood and long coat, cloak, trench coat and hat, top hat and tails, hoodie and jeans, shadow trench coat
+- **Door:** wooden, metal, stage curtain, portal, door ajar (a closed door with a crack of light). And whether it swings or slides open.
 - **How he arrives:** walks out, rises up, slides in, drops down. Press **Play the entrance** to watch it.
 - **Eye color:** six swatches, or pick your own.
 - **Colors:** hood or hat, coat, trim (belt, hat band, jeans), face or skin, hair, and the light behind the door.
@@ -42,14 +42,14 @@ Every field is optional. Leave one out and the default is used.
 | | `glow` | 0 to 2 (1 is normal) |
 | | `pulseSeconds` | 0.2 to 10, how fast the glow pulses |
 | | `flicker` | `true` or `false` |
-| `outfit` | `style` | `hood`, `cloak`, `trench`, `tophat`, `hoodie` |
+| `outfit` | `style` | `hood`, `cloak`, `trench`, `tophat`, `hoodie`, `shadow` |
 | | `hood` | The color of the hood, or of the hat in the trench and top hat outfits |
 | | `coat` | The color of the coat |
 | | `accent` | Optional trim color: the cloak hem, the trench belt and hat band, the top hat band, the jeans |
-| `face` | `style` | `void`, `skull`, `mask`, `grin`, `redhead`, `alien` |
+| `face` | `style` | `void`, `skull`, `mask`, `grin`, `redhead`, `alien`, `shadow` |
 | | `color` | Optional skin color for the skull, mask, redhead and alien faces (the alien is green, the redhead is peach, unless you set one) |
 | | `hair` | Optional hair color for the redhead (a red-orange unless you set one) |
-| `door` | `style` | `wood`, `metal`, `curtain`, `portal` |
+| `door` | `style` | `wood`, `metal`, `curtain`, `portal`, `ajar` |
 | | `glow` | A color for the light behind the door |
 | | `opens` | `swing` or `slide` |
 | `mood` | `darkness` | 0 to 0.95, how dark the room gets |
@@ -89,9 +89,9 @@ Copy `skins/_template`, rename the folder, then paste this into any AI assistant
 
 Put the folder it gives you in `skins/`, deploy, pick it in Settings, and press **Test the figure**.
 
-## Four finished examples
+## Finished examples
 
-Look in `skins/` for `green-visitor` (alien, top hat, portal, drops in), `detective` (trench coat, redhead, metal door that slides, slides in), `ghost` (pale mask, cloak, curtain, rises up) and `night-shift` (hoodie, glowing grin). Copy one as a starting point instead of the template.
+Look in `skins/`. `shadow-form` is the default look: a black fedora, a face lost in shadow with only the eyes lit, a pinstripe trench coat with a red tie and belt buckle, and a door ajar with a crack of red light. The others are `hooded-figure` (the original), `green-visitor` (alien, top hat, portal, drops in), `detective` (trench coat, redhead, metal door that slides, slides in), `ghost` (pale mask, cloak, curtain, rises up) and `night-shift` (hoodie, glowing grin). Copy one as a starting point instead of the template.
 
 ## Ideas to start from
 

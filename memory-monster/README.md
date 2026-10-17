@@ -10,7 +10,7 @@ Idea and design by Cheryl. Owned 100% by XYZ Agents LLC. Open source under the l
 
 | Address | What it is |
 | --- | --- |
-| `/` | The landing page: a looping demo, how it works, everything you can change as pictures, the four finished looks, and the short video |
+| `/` | The landing page: a looping demo, how it works, everything you can change as pictures, the finished looks, and the short video |
 | `/app` | Memory Monster itself |
 | `/looks` | The Look Studio |
 
@@ -98,9 +98,9 @@ The defaults live in `settings.json`. Change one, deploy again, and everyone get
 
 ## Change how he looks
 
-Press **Look Studio** to choose from pictures: six faces (including a redhead and a green alien), five outfits (hood, cloak, trench coat, top hat, hoodie), four doors and four ways to arrive. Every choice is a thumbnail of the real figure, so you see it before you pick it, and **Copy as skin.json** saves a look you like as a skin.
+Press **Look Studio** to choose from pictures: seven faces (including a redhead, a green alien and a face in shadow), six outfits (hood, cloak, trench coat, top hat, hoodie, shadow trench coat), five doors (including one ajar with a crack of light) and four ways to arrive. Every choice is a thumbnail of the real figure, so you see it before you pick it, and **Copy as skin.json** saves a look you like as a skin.
 
-Four finished examples ship with it, so you can see what a custom look is: `green-visitor`, `detective`, `ghost` and `night-shift`. Pick one in Settings.
+Shadow Form is the default look, and five more ship with it so you can see what a custom look is: `hooded-figure`, `green-visitor`, `detective`, `ghost` and `night-shift`. Pick one in Settings.
 
 The figure, the door and what he says all live in a skin folder, so you can also change them by editing a file, without touching the app code. See `MAKE-YOUR-OWN-FIGURE.md`.
 

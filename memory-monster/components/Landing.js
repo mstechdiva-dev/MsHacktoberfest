@@ -3,6 +3,7 @@ import { Thumb } from "./Figure";
 import { applyLook } from "../lib/looks.js";
 import { FACES, OUTFITS, DOORS, OPENS, ENTRANCES, EYE_COLORS } from "../lib/skinOptions.js";
 
+const WORDS = ["No", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight"];
 const label = (list, id) => (list.find((o) => o.id === id) || { label: id }).label;
 
 // One row of small pictures, each drawn by the same code as the real scene.
@@ -25,7 +26,8 @@ function Row({ title, options, section, field, base, kind }) {
 export default function Landing({ defaults, looks, hasVideo }) {
   const base = (looks.find((l) => l.id === defaults.skin) || looks[0]).skin;
   const examples = looks.filter((l) => l.id !== defaults.skin && l.source === "built-in");
-  const heroLooks = looks.filter((l) => l.source === "built-in");
+  const builtIn = looks.filter((l) => l.source === "built-in");
+  const heroLooks = [...builtIn.filter((l) => l.id === defaults.skin), ...builtIn.filter((l) => l.id !== defaults.skin)];
 
   return (
     <main className="landing">
@@ -87,7 +89,7 @@ export default function Landing({ defaults, looks, hasVideo }) {
 
       <section className="lsec" aria-labelledby="examples">
         <h2 id="examples">Finished looks</h2>
-        <p className="lead">Four examples that ship with it. Each one is a single small file.</p>
+        <p className="lead">{WORDS[examples.length] || examples.length} more ship with it. Each one is a single small file.</p>
         <div className="cards">
           {examples.map((l) => (
             <article className="lcard" key={l.id}>

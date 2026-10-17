@@ -42,7 +42,14 @@ export function Figure({ skin }) {
         <BackArt outfit={outfit} />
         <div className="hood">
           {skin.face.style === "redhead" ? <div className="hair" /> : null}
+          {skin.face.style === "shadow" ? (
+            <>
+              <i className="shear l" />
+              <i className="shear r" />
+            </>
+          ) : null}
           <div className="face" data-face={skin.face.style} />
+          {skin.face.style === "shadow" ? <i className="shnose" /> : null}
         </div>
         <FrontArt outfit={outfit} />
         <div className={`reye l${skin.eyes.flicker ? " flick" : ""}`} />
