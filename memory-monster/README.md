@@ -124,7 +124,7 @@ You need Node.js 20 or newer.
 ## Videos
 
 - `public/memory-monster-short.mp4` (1 minute 49 seconds) is the short video on the landing page: a real system monitor beside Memory Monster as memory fills up, then four custom entrances.
-- `docs/memory-monster-walkthrough.mp4` (4 minutes 25 seconds) is the long version, including editing a skin in a terminal, checking it, building it and seeing it.
+- `docs/memory-monster-walkthrough.mp4` (4 minutes 27 seconds) is the long version, including editing a skin in a terminal, checking it, building it and seeing it.
 
 ## Credits and ownership
 
