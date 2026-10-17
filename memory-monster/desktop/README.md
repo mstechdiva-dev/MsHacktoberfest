@@ -98,4 +98,4 @@ The installer is not code-signed, so Windows may show a "Windows protected your 
 
 - It draws over the primary screen only.
 - A program running in true exclusive full screen (some games) can draw over the overlay, so he may not be visible there.
-- It was built and tested on Linux with a virtual screen. The window behavior, the tray, the real memory reading and closing a program were all checked there. It has **not** been run on Windows yet, so the Windows tray icon, the click-through over real windows, Start with Windows, the .bat files and the installer are untested. If something does not behave, please open an issue and say what you see.
+- It was built and tested on Linux with a virtual screen: the window behavior, the tray, the real memory reading and closing a program were all checked there. It has also been run on Windows through `run-memory-monster.bat`, where it started with no errors. The installer, Start with Windows and the click-through over real windows have not been checked on Windows one by one. If something does not behave, please open an issue and say what you see.
