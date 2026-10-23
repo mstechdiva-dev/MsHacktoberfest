@@ -86,4 +86,4 @@ A repo can be imported into Vercel more than once, so each folder can be its own
 ## Licenses and credits
 
 - **Cozy Wash:** MIT. See [`cozy-wash/LICENSE`](cozy-wash/LICENSE).
-- **Memory Monster:** idea and design by Cheryl. IP owned 100% by XYZ Agents LLC. MIT. See [`memory-monster/LICENSE`](memory-monster/LICENSE).
+- **Memory Monster:** idea and design by Cheryl. MIT. See [`memory-monster/LICENSE`](memory-monster/LICENSE).
