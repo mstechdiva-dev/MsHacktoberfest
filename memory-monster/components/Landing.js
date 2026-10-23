@@ -144,7 +144,7 @@ npm run check-skins`}</pre>
       </section>
 
       <footer className="lfoot">
-        <p>Memory Monster. Idea and design by Cheryl. IP owned 100% by XYZ Agents LLC. Open source under the MIT license.</p>
+        <p>Memory Monster. Idea and design by Cheryl. Open source under the MIT license.</p>
         <p><a href="/app">Open the app</a> · <a href="/looks">Look Studio</a></p>
       </footer>
     </main>

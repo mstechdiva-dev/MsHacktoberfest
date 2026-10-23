@@ -2,7 +2,7 @@
 
 *A door opens and a dark figure steps out when your computer's memory gets too full.*
 
-Idea and design by Cheryl. Owned 100% by XYZ Agents LLC. Open source under the license in `LICENSE`.
+Idea and design by Cheryl. Open source under the MIT license in `LICENSE`.
 
 Live at [memory-haunt.vercel.app](https://memory-haunt.vercel.app).
 
@@ -151,9 +151,9 @@ Windows gives a clear "percent of memory in use" reading, and the 80 and 75 rule
 - `public/memory-monster-short.mp4` (1 minute 49 seconds) is the short video on the landing page: a real system monitor beside Memory Monster as memory fills up, then four custom entrances.
 - `docs/memory-monster-walkthrough.mp4` (4 minutes 27 seconds) is the long version, including editing a skin in a terminal, checking it, building it and seeing it.
 
-## Credits and ownership
+## Credits
 
-Memory Monster is Cheryl's idea and design. This is IP owned 100% by XYZ Agents LLC. Anything derived from this project names XYZ Agents LLC as its owner.
+Memory Monster is Cheryl's idea and design.
 
 ## License
 

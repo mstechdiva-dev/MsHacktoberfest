@@ -38,6 +38,6 @@ Keep each pull request to one change and say how you tested it. Run `npm test` b
 
 Those would each be their own game, not a port, because those systems keep and reclaim memory differently. If you want to start one, open an issue first so we can talk about the design.
 
-## Ownership
+## Credit and license
 
-Memory Monster is Cheryl's idea and design, and it is IP owned 100% by XYZ Agents LLC. By contributing you agree your contribution is shared under the project license.
+Memory Monster is Cheryl's idea and design. By contributing you agree your contribution is shared under the project license (MIT).
