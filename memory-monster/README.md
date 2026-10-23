@@ -148,7 +148,7 @@ Windows gives a clear "percent of memory in use" reading, and the 80 and 75 rule
 
 ## Videos
 
-- `public/memory-monster-short.mp4` (1 minute 49 seconds) is the short video on the landing page: a real system monitor beside Memory Monster as memory fills up, then four custom entrances.
+- `public/memory-monster-short.mp4` (1 minute 49 seconds) is the short video on the landing page. It has a voice-over, music and captions: it opens on the cover, shows a real system monitor beside Memory Monster as memory fills up, then four custom entrances, and ends in the Look Studio. `public/memory-monster-short.srt` has the same words as subtitles.
 - `docs/memory-monster-walkthrough.mp4` (4 minutes 27 seconds) is the long version, including editing a skin in a terminal, checking it, building it and seeing it.
 
 ## Credits and ownership

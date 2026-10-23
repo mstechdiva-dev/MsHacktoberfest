@@ -1,0 +1,80 @@
+1
+00:00:00,950 --> 00:00:03,270
+This is Memory Monster.
+
+2
+00:00:03,830 --> 00:00:09,270
+When your memory fills up, a door opens, and a dark figure steps out.
+
+3
+00:00:09,470 --> 00:00:13,030
+A real system monitor shows this computer's memory.
+
+4
+00:00:13,150 --> 00:00:16,810
+Memory Monster reads the same numbers, and waits.
+
+5
+00:00:17,090 --> 00:00:21,450
+The line is set low, so a quiet computer can show you.
+
+6
+00:00:21,570 --> 00:00:24,930
+Now something big starts eating memory.
+
+7
+00:00:24,970 --> 00:00:27,230
+Watch the monitor, and the door.
+
+8
+00:00:27,370 --> 00:00:32,710
+Past the line, the door opens wide, and he steps out.
+
+9
+00:00:39,770 --> 00:00:43,550
+Then the monitor drops, and he goes back behind the door.
+
+10
+00:00:50,070 --> 00:00:53,290
+That is Shadow Form, the default look.
+
+11
+00:00:53,510 --> 00:00:55,690
+Every look has its own entrance.
+
+12
+00:00:55,750 --> 00:00:58,070
+Same memory, different monster.
+
+13
+00:00:58,170 --> 00:01:03,390
+Green Visitor: an alien in a top hat, dropping out of a glowing portal.
+
+14
+00:01:07,450 --> 00:01:10,480
+The Detective, in a trench coat.
+
+15
+00:01:10,510 --> 00:01:14,350
+His metal door slides open, and he slides in.
+
+16
+00:01:17,870 --> 00:01:21,330
+The Ghost, with a pale mask and a cloak.
+
+17
+00:01:21,410 --> 00:01:25,030
+A curtain parts, and he rises up from the floor.
+
+18
+00:01:26,870 --> 00:01:33,110
+Night Shift: a hoodie, a glowing grin, and he walks out of a wooden door.
+
+19
+00:01:38,470 --> 00:01:40,930
+Close the program, and he goes home.
+
+20
+00:01:41,670 --> 00:01:45,890
+Make him yours: pick a look, or edit one small file.
+
