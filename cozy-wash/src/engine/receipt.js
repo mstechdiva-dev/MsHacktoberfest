@@ -48,7 +48,7 @@ export function buildReceipt(day, templates, extra) {
   const when = extra.when || new Date();
   const stamp = receiptStamp(when);
   const rows = [];
-  rows.push({ center: 'COZY WASH', strong: true }, { center: 'cozywash.app' }, { center: stamp }, 'cut');
+  rows.push({ center: 'COZY WASH', strong: true }, { center: 'example.com' }, { center: stamp }, 'cut');
   rows.push(['LOADS', String(day.loads.length)]);
   for (const l of day.loads) {
     rows.push([`  ${BIN_NAMES[l.bin] || l.bin}`, `${l.score} / 100`, 'dots']);

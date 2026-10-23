@@ -12,7 +12,7 @@ async function withTimeout(fetchImpl, url, init, ms) {
 const headers = (key) => ({
   Authorization: `Bearer ${key}`,
   'Content-Type': 'application/json',
-  'HTTP-Referer': 'https://cozywash.app',
+  'HTTP-Referer': 'https://example.com',
   'X-Title': 'Cozy Wash',
 });
 
